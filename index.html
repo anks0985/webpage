@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INSTRUCTO.HUB - AI-Powered Canvas LMS Suite</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.5;
+            background-color: #f9fafb;
+        }
+
+        /* Utility classes */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(120deg, #1a365d 0%, #2563eb 100%);
+        }
+
+        /* Text styles */
+        .text-center {
+            text-align: center;
+        }
+
+        .text-white {
+            color: white;
+        }
+
+        .text-blue-600 {
+            color: #2563eb;
+        }
+
+        .text-green-500 {
+            color: #10b981;
+        }
+
+        .font-bold {
+            font-weight: bold;
+        }
+
+        .head-container img {
+            max-width: 30%;
+            height: auto;
+            border-radius: 10%;
+        }
+
+        /* Spacing */
+        .mb-2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+
+        .mb-6 {
+            margin-bottom: 1.5rem;
+        }
+
+        .mb-8 {
+            margin-bottom: 2rem;
+        }
+
+        .mb-12 {
+            margin-bottom: 3rem;
+        }
+
+        .mr-2 {
+            margin-right: 0.5rem;
+        }
+
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .py-2 {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+
+        .py-3 {
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+        }
+
+        .py-8 {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+
+        .py-16 {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+
+        .py-20 {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+
+        .px-4 {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .px-6 {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+
+        .px-8 {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        .p-6 {
+            padding: 1.5rem;
+        }
+
+        /* Typography */
+        .text-5xl {
+            font-size: 3rem;
+        }
+
+        .text-3xl {
+            font-size: 1.875rem;
+        }
+
+        .text-2xl {
+            font-size: 1.5rem;
+        }
+
+        .text-xl {
+            font-size: 1.25rem;
+        }
+
+        /* Layout */
+        .flex {
+            display: flex;
+        }
+
+        .flex-col {
+            flex-direction: column;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .space-x-4>*+* {
+            margin-left: 1rem;
+        }
+
+        .space-y-3>*+* {
+            margin-top: 0.75rem;
+        }
+
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .md\:grid-cols-2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .md\:grid-cols-3 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .lg\:grid-cols-3 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Components */
+        .rounded-full {
+            border-radius: 9999px;
+        }
+
+        .rounded-lg {
+            border-radius: 0.5rem;
+        }
+
+        .rounded-xl {
+            border-radius: 0.75rem;
+        }
+
+        .shadow-lg {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+                0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .border-2 {
+            border: 2px solid;
+        }
+
+        .border-blue-500 {
+            border-color: #2563eb;
+        }
+
+        .bg-white {
+            background-color: white;
+        }
+
+        .bg-blue-50 {
+            background-color: #eff6ff;
+            text-align: center;
+        }
+
+        .bg-blue-500 {
+            background-color: #2563eb;
+        }
+
+        .bg-gray-50 {
+            background-color: #f9fafb;
+        }
+
+        .space-y-3 {
+            padding-left: 10px;
+        }
+
+        /* Hover effects */
+        .feature-card {
+            transition: transform 0.3s ease;
+        }
+        .feature-card img{
+            border-radius: 0.75rem;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .hover\:bg-blue-100:hover {
+            background-color: #dbeafe;
+        }
+
+        .transition-colors {
+            transition-property: background-color, border-color, color;
+            transition-duration: 0.3s;
+        }
+
+        /* List styles */
+        ul {
+            list-style: disc;
+        }
+
+        /* Max width utilities */
+        .max-w-3xl {
+            max-width: 48rem;
+        }
+
+        .max-w-4xl {
+            max-width: 56rem;
+        }
+
+        /* Button */
+        button {
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        /* Image */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* SVG */
+        .w-5 {
+            width: 1.25rem;
+        }
+
+        .h-5 {
+            height: 1.25rem;
+        }
+
+        /* Overflow */
+        .overflow-x-auto {
+            overflow-x: auto;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Hero Section -->
+    <header class="gradient-bg text-white py-20">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col items-center text-center">
+                <h1 class="text-5xl font-bold mb-6">INSTRUCTO.HUB</h1>
+                <p class="text-2xl mb-8">An AI-Powered Application Suite for Canvas LMS</p>
+                <div class="flex space-x-4">
+                    <span class="px-4 py-2 bg-blue-500 rounded-full">Smart</span>
+                    <span class="px-4 py-2 bg-blue-500 rounded-full">Scalable</span>
+                    <span class="px-4 py-2 bg-blue-500 rounded-full">Impactful</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Problem Statement -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-8">The Challenge We Solve</h2>
+
+            <div class="head-container grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg">
+                    <img src="/images/ai-course-icon.webp" alt="Teachers Icon" class="mb-4" />
+                    <h3 class="text-xl font-bold mb-4">How do Teachers benefit?</h3>
+                    <ul class="space-y-3">
+                        <li>Reduced time spent on repetitive administrative tasks.</li>
+                        <li>Saves considerable time in course creating - including integration of interactives.</li>
+                        <li>Personalized insights into student engagement and performance.</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg">
+                    <img src="/images/ai-course-icon.webp" alt="Students Icon" class="mb-4" />
+                    <h3 class="text-xl font-bold mb-4">How do Students benefit?</h3>
+                    <ul class="space-y-3">
+                        <li>Personalized learning experience, tailored to each individual's understanding</li>
+                        <li>Interactive and engaging course content powered by AI.</li>
+                        <li>Context-driven and real-time support through AI assistants.</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg">
+                    <img src="/images/ai-course-icon.webp" alt="Admins Icon" class="mb-4" />
+                    <h3 class="text-xl font-bold mb-4">How do Administrators benefit?</h3>
+                    <ul class="space-y-3">
+                        <li>Monitors increase in the overall LMS usage, by teacher and students.</li>
+                        <li>Centralized monitoring of application adoption and ROI.</li>
+                        <li>Centralissed control panel to manage the usage of AIs.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Suite -->
+    <section class="py-16 bg-blue-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Our Product Suite</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="feature-card bg-white p-6 rounded-xl shadow-lg">
+                    <img src="/images/ai-course-icon.webp" alt="Course Creator" class="mb-4" />
+                    <h3 class="text-xl font-bold mb-4">AI Course Creator</h3>
+                    <p>Automates course content creation with context-specific inputs, saving teachers time while
+                        keeping them in full control of final outputs.</p>
+                </div>
+                <div class="feature-card bg-white p-6 rounded-xl shadow-lg">
+                    <img src="/images/ai-course-enhancer.webp" alt="Enhancer" class="mb-4" />
+                    <h3 class="text-xl font-bold mb-4">Course Enhancer</h3>
+                    <p>Enhances courses by creating AI-powered activities like quizzes, assignments, and discussions,
+                        aligned with curricula to boost engagement.</p>
+                </div>
+                <div class="feature-card bg-white p-6 rounded-xl shadow-lg">
+                    <img src="/images/ai-course-icon.webp" alt="Chatbot" class="mb-4" />
+                    <h3 class="text-xl font-bold mb-4">Chatbot (AI Assistant)</h3>
+                    <p>A context-aware chatbot designed for education, helping teachers, students, and admins with
+                        creation, engagement, and tracking tasks.</p>
+                </div>
+                <div class="feature-card bg-white p-6 rounded-xl shadow-lg">
+                    <img src="/images/ai-my-nav.webp" alt="Navigator" class="mb-4" />
+                    <h3 class="text-xl font-bold mb-4">My Navigator</h3>
+                    <p>Analyzes group interactions and scores, offering personalized learning pathways to optimize
+                        outcomes and enhance student success.</p>
+                </div>
+                <div class="feature-card bg-white p-6 rounded-xl shadow-lg">
+                    <img src="/images/lms-guide.webp" alt="LMS Guide" class="mb-4" />
+                    <h3 class="text-xl font-bold mb-4">LMS Guide</h3>
+                    <p>Guides students in navigating Canvas features and functionalities, analyzes course health, and
+                        notifies teachers of errors needing resolution.</p>
+                </div>
+                <div class="feature-card bg-white p-6 rounded-xl shadow-lg">
+                    <img src="/images/admin-control-panel.webp" alt="Admin Panel" class="mb-4" />
+                    <h3 class="text-xl font-bold mb-4">Admin Control Panel</h3>
+                    <p>Enables centralized AI management for admins, monitoring feature adoption, ROI, and overall
+                        efficiency in a streamlined interface.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Stakeholder Benefits</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-6 rounded-lg border-2 border-blue-500">
+                    <h3 class="text-xl font-bold mb-4 text-blue-600">Teachers</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Reduced administrative workload
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Faster course creation
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Personalized student insights
+                        </li>
+                    </ul>
+                </div>
+                <div class="p-6 rounded-lg border-2 border-blue-500">
+                    <h3 class="text-xl font-bold mb-4 text-blue-600">Students</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Personalized learning experience
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Interactive AI-powered content
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Real-time support and feedback
+                        </li>
+                    </ul>
+                </div>
+                <div class="p-6 rounded-lg border-2 border-blue-500">
+                    <h3 class="text-xl font-bold mb-4 text-blue-600">Administrators</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Increased institutional efficiency
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Centralized monitoring
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Data-driven decision making
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-2xl font-bold mb-4">Transform Your Canvas LMS Today</h2>
+            <p class="mb-6">Smart. Scalable. Impactful.</p>
+            <button class="bg-white text-blue-600 px-8 py-3 rounded-full font-bold hover:bg-blue-100 transition-colors">
+                Request Demo
+            </button>
+        </div>
+    </footer>
+</body>
+
+</html>
