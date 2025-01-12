@@ -162,9 +162,7 @@
             align-items: center;
         }
 
-        .space-x-4>*+* {
-            margin-left: 1rem;
-        }
+        .space-x-4>*+* {}
 
         .space-y-3>*+* {
             margin-top: 0.75rem;
@@ -242,7 +240,8 @@
         .feature-card {
             transition: transform 0.3s ease;
         }
-        .feature-card img{
+
+        .feature-card img {
             border-radius: 0.75rem;
         }
 
@@ -299,6 +298,16 @@
         .overflow-x-auto {
             overflow-x: auto;
         }
+
+        .dot-separator {
+            color: white;
+            font-size: 1.5rem;
+            /* Adjust size as needed */
+            font-weight: bold;
+            /* Makes the dot bold */
+            margin: 0 .5rem .25rem 0.5rem;
+            /* Adds spacing around the dot */
+        }
     </style>
 </head>
 
@@ -309,11 +318,11 @@
             <div class="flex flex-col items-center text-center">
                 <h1 class="text-5xl font-bold mb-6">INSTRUCTO.HUB</h1>
                 <p class="text-2xl mb-8">An AI-Powered Application Suite for Canvas LMS</p>
-                <div class="flex space-x-4">
+                <div class="flex items-center space-x-4">
                     <span class="px-4 py-2 bg-blue-500 rounded-full">Smart</span>
-                    <span class="text-white font-bold">•</span>
+                    <span class="dot-separator">•</span>
                     <span class="px-4 py-2 bg-blue-500 rounded-full">Scalable</span>
-                    <span class="text-white font-bold">•</span>
+                    <span class="dot-separator">•</span>
                     <span class="px-4 py-2 bg-blue-500 rounded-full">Impactful</span>
                 </div>
             </div>
@@ -502,7 +511,6 @@
     <footer class="gradient-bg text-white py-8">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-2xl font-bold mb-4">Transform Your Canvas LMS Today</h2>
-            <p class="mb-6">Smart. Scalable. Impactful.</p>
             <button class="bg-white text-blue-600 px-8 py-3 rounded-full font-bold hover:bg-blue-100 transition-colors">
                 Request Demo
             </button>
