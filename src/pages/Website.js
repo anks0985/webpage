@@ -238,7 +238,7 @@ const ProductsSection = () => {
     }, [isAutoPlaying, isTransitioning, currentIndex]);
 
     const handleProductClick = (productId) => {
-        window.location.href = `/products#${productId}`;
+        window.location.href = `#/products#${productId}`;
     };
 
     return (
@@ -263,7 +263,7 @@ const ProductsSection = () => {
                             administration, our tools bring efficiency, intelligence, and innovation to your LMS experience.
                         </p>
                         <button className="w-full md:w-auto px-6 md:px-8 py-3 text-sm font-semibold border border-gray-900 rounded-full hover:bg-gray-900 hover:text-white transition-colors duration-300"
-                            onClick={() => window.location.href = '/products'}
+                            onClick={() => window.location.href = '#/products'}
                         >
                             SEE MORE
                         </button>
