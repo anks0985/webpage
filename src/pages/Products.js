@@ -96,10 +96,10 @@ const Products = () => {
   };
   const features = [
     {
-      id: "course-creator",
+      id: "InstructoGen",
       number: "01",
-      title: "AI Course Creator – Empower Educators, Effortlessly",
-      description: "Designing a high-quality course has never been easier. With AI Course Creator, educators can generate structured, curriculum-aligned content with just a few inputs—while retaining complete control.",
+      title: "InstructoGen – Empower Educators, Effortlessly",
+      description: "Designing a high-quality course has never been easier. With InstructoGen, educators can generate structured, curriculum-aligned content with just a few inputs—while retaining complete control.",
       features: [
         "Choose from proven methodologies like Bloom's Taxonomy or customize your own",
         "Define modules, topics, and lessons with ease",
@@ -109,12 +109,12 @@ const Products = () => {
       ]
     },
     {
-      id: "course-enhancer",
+      id: "InstructoBoost",
       number: "02",
-      title: "Course Enhancer – Turn Any Course into an AI-Powered Learning Hub",
-      description: "Supercharge existing courses with engaging AI-driven activities. Whether it's a course built using InstructoHub or an existing LMS course, instructors can instantly enhance their content with quizzes, assignments, and discussions—perfectly aligned with learning objectives.",
+      title: "InstructoBoost – Turn Any Course into an AI-Powered Learning Hub",
+      description: "Supercharge existing courses with engaging AI-driven activities. Whether it's a course built using InstructoGen or an existing LMS course, instructors can instantly enhance their content with quizzes, assignments, and discussions—perfectly aligned with learning objectives.",
       features: [
-        "Launch the Course Enhancer inside Canvas and other popular LMS platforms",
+        "Launch the InstructoBoost inside Canvas and other popular LMS platforms",
         "Generate quizzes, assignments, and discussions that align with learning objectives",
         "Enhance existing courses without rebuilding from scratch",
         "Transform static content into interactive learning experiences",
@@ -122,9 +122,9 @@ const Products = () => {
       ]
     },
     {
-      id: "ai-assistant",
+      id: "InstructoEcho",
       number: "03",
-      title: "AI Assistant – Your 24/7 Smart Learning Companion",
+      title: "InstructoEcho – Your 24/7 Smart Learning Companion",
       description: "Students deserve instant, judgment-free support—whenever they need it. Our AI-powered Chatbot is context-aware, ensuring responses remain relevant to the course where it's launched.",
       features: [
         "Provide private and secure question-answering for students",
@@ -135,10 +135,10 @@ const Products = () => {
       ]
     },
     {
-      id: "practice-mode",
+      id: "InstructoPulse",
       number: "04",
-      title: "Practice Mode – Learn by Doing with AI-Powered Adaptation",
-      description: "Traditional study methods fall short in personalization. Practice Mode dynamically adjusts to student responses, providing context-based Q&A exercises tailored to LMS modules, pages, and activities.",
+      title: "InstructoPulse – Learn by Doing with AI-Powered Adaptation",
+      description: "Traditional study methods fall short in personalization. InstructoPulse dynamically adjusts to student responses, providing context-based Q&A exercises tailored to LMS modules, pages, and activities.",
       features: [
         "The AI adapts based on accuracy and response time",
         "Provides interactive, personalized learning experiences",
@@ -148,10 +148,10 @@ const Products = () => {
       ]
     },
     {
-      id: "auto-grading",
+      id: "InstructoGrade",
       number: "05",
-      title: "AI Auto-Grading – Cuts Grading Time Drastically",
-      description: "Grading shouldn't be a bottleneck. AI Auto-Grading eliminates the tediousness of manual assessment by providing instant, rubric-based grading suggestions with teacher review capabilities.",
+      title: "InstructoGrade – Cuts Grading Time Drastically",
+      description: "Grading shouldn't be a bottleneck. InstructoGrade eliminates the tediousness of manual assessment by providing instant, rubric-based grading suggestions with teacher review capabilities.",
       features: [
         "Evidence-based marking suggestions for teacher final review and approval",
         "Review AI-generated grading insights with a user-friendly interface",
@@ -161,9 +161,9 @@ const Products = () => {
       ]
     },
     {
-      id: "admin-control",
+      id: "InstructoNex",
       number: "06",
-      title: "Admin Control Panel – AI Management, Fully in Your Control",
+      title: "InstructoNex – AI Management, Fully in Your Control",
       description: "With centralized AI controls, administrators can customize AI settings for their institution. Enable AI for specific courses, set per-user AI token limits, choose preferred AI models, and even integrate custom AI APIs—all from one powerful dashboard.",
       features: [
         "Gain insights into feature adoption, ROI, and overall efficiency",

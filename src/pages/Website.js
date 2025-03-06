@@ -131,51 +131,51 @@ const ProductsSection = () => {
     const originalIndustries = [
         {
             number: "01",
-            title: "AI Course Creator",
+            title: "InstructoGen",
             tagline: "Empower Educators, Effortlessly",
-            description: "Create quality courses with minimal effort. AI Course Creator helps educators generate structured, curriculum-aligned content through simple inputs while maintaining complete creative control over the final product.",
+            description: "Create quality courses with minimal effort. InstructoGen helps educators generate structured, curriculum-aligned content through simple inputs while maintaining complete creative control over the final product.",
             image: "/assets/images/website/p1.png",
-            id: "course-creator"
+            id: "InstructoGen"
         },
         {
             number: "02",
-            title: "Course Enhancer",
+            title: "InstructoBoost",
             tagline: "Turn Any Course into an AI-Powered Learning Hub",
             description: "Elevate existing courses with AI-driven learning activities. Instructors can instantly enhance any content with interactive quizzes, meaningful assignments and engaging discussions, whether built in InstructoHub or another LMS.",
             image: "/assets/images/website/p2.png",
-            id: "course-enhancer"
+            id: "InstructoBoost"
         },
         {
             number: "03",
-            title: "AI Assistant",
+            title: "InstructoEcho",
             tagline: "Your 24/7 Smart Learning Companion",
             description: "Provide students with instant, judgment-free support whenever they need assistance. Our context-aware AI Chatbot ensures all responses remain relevant to the specific course material where it has been deployed.",
             image: "/assets/images/website/p3.jpg",
-            id: "ai-assistant"
+            id: "InstructoEcho"
         },
         {
             number: "04",
-            title: "Practice Mode",
+            title: "InstructoPulse",
             tagline: "Learn by Doing with AI-Powered Adaptation",
-            description: "Exceed limitations of standard study methods with personalized learning. Practice Mode adapts to individual student responses, creating tailored question-answer exercises specific to LMS content and module activities.",
+            description: "Exceed limitations of standard study methods with personalized learning. InstructoPulse adapts to individual student responses, creating tailored question-answer exercises specific to LMS content and module activities.",
             image: "/assets/images/website/product4.png",
-            id: "practice-mode"
+            id: "InstructoPulse"
         },
         {
             number: "05",
-            title: "AI Auto-Grading",
+            title: "InstructoGrade",
             tagline: "Cuts Grading Time Drastically",
-            description: "Remove assessment bottlenecks from your teaching workflow. AI Auto-Grading eliminates tedious manual evaluation by delivering instant, rubric-aligned grading suggestions with full teacher review capabilities.",
+            description: "Remove assessment bottlenecks from your teaching workflow. InstructoGrade eliminates tedious manual evaluation by delivering instant, rubric-aligned grading suggestions with full teacher review capabilities.",
             image: "/assets/images/website/product5.png",
-            id: "auto-grading"
+            id: "InstructoGrade"
         },
         {
             number: "06",
-            title: "Admin Control Panel",
+            title: "InstructoNex",
             tagline: "AI Management, Fully in Your Control",
             description: "Manage AI features through centralized institutional controls. Administrators can enable AI for specific courses, establish user token limits, select preferred AI models, and integrate custom APIs for specialized needs.",
             image: "/assets/images/website/product3.png",
-            id: "admin-control"
+            id: "InstructoNex"
         }
     ];
     const extendedItems = [
