@@ -50,20 +50,22 @@ const Products = () => {
   }, []);
   useEffect(() => {
     const handleScrollToAnchor = () => {
-      const hash = window.location.hash;
-      if (hash) {
-        setTimeout(() => {
-          const element = document.querySelector(hash);
-          if (element) {
-            const headerOffset = 140;
-            const elementPosition = element.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-            window.scrollTo({
-              top: offsetPosition,
-              behavior: "smooth"
-            });
-          }
-        }, 100);
+      const url = window.location.href;
+      const parts = url.split('#');
+      if (parts.length > 2) {
+        const anchorId = parts[parts.length - 1];
+        const element = document.getElementById(anchorId);
+
+        if (element) {
+          const headerOffset = 140;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
+        }
       }
     };
     handleScrollToAnchor();
