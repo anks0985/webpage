@@ -130,52 +130,52 @@ const ServicesSection = () => {
 const ProductsSection = () => {
     const originalIndustries = [
         {
-            number: "01",
-            title: "InstructoGen",
-            tagline: "Empower Educators, Effortlessly",
-            description: "Create quality courses with minimal effort. InstructoGen helps educators generate structured, curriculum-aligned content through simple inputs while maintaining complete creative control over the final product.",
-            image: "/assets/images/website/p1.png",
-            id: "InstructoGen"
+            "number": "01",
+            "title": "InstructoGen",
+            "tagline": "Empower Educators, Effortlessly",
+            "description": "Create quality courses from simple inputs with AI assistance while maintaining full control over curriculum-aligned content.",
+            "image": "/assets/images/website/p1.png",
+            "id": "InstructoGen"
         },
         {
-            number: "02",
-            title: "InstructoBoost",
-            tagline: "Turn Any Course into an AI-Powered Learning Hub",
-            description: "Elevate existing courses with AI-driven learning activities. Instructors can instantly enhance any content with interactive quizzes, meaningful assignments and engaging discussions, whether built in InstructoHub or another LMS.",
-            image: "/assets/images/website/p2.png",
-            id: "InstructoBoost"
+            "number": "02",
+            "title": "InstructoBoost",
+            "tagline": "Turn Any Course into an AI-Powered Learning Hub",
+            "description": "Enhance any course with AI-driven quizzes, assignments and discussions that work in InstructoHub or other LMS systems.",
+            "image": "/assets/images/website/p2.png",
+            "id": "InstructoBoost"
         },
         {
-            number: "03",
-            title: "InstructoEcho",
-            tagline: "Your 24/7 Smart Learning Companion",
-            description: "Provide students with instant, judgment-free support whenever they need assistance. Our context-aware AI Chatbot ensures all responses remain relevant to the specific course material where it has been deployed.",
-            image: "/assets/images/website/p3.jpg",
-            id: "InstructoEcho"
+            "number": "03",
+            "title": "InstructoEcho",
+            "tagline": "Your 24/7 Smart Learning Companion",
+            "description": "Always-available AI support that provides course-specific assistance without judgment whenever students need help.",
+            "image": "/assets/images/website/p3.jpg",
+            "id": "InstructoEcho"
         },
         {
-            number: "04",
-            title: "InstructoPulse",
-            tagline: "Learn by Doing with AI-Powered Adaptation",
-            description: "Exceed limitations of standard study methods with personalized learning. InstructoPulse adapts to individual student responses, creating tailored question-answer exercises specific to LMS content and module activities.",
-            image: "/assets/images/website/product4.png",
-            id: "InstructoPulse"
+            "number": "04",
+            "title": "InstructoPulse",
+            "tagline": "Learn by Doing with AI-Powered Adaptation",
+            "description": "Personalized learning through adaptive exercises that respond to individual progress within specific LMS modules.",
+            "image": "/assets/images/website/product4.png",
+            "id": "InstructoPulse"
         },
         {
-            number: "05",
-            title: "InstructoGrade",
-            tagline: "Cuts Grading Time Drastically",
-            description: "Remove assessment bottlenecks from your teaching workflow. InstructoGrade eliminates tedious manual evaluation by delivering instant, rubric-aligned grading suggestions with full teacher review capabilities.",
-            image: "/assets/images/website/product5.png",
-            id: "InstructoGrade"
+            "number": "05",
+            "title": "InstructoGrade",
+            "tagline": "Cuts Grading Time Drastically",
+            "description": "Speed up assessment with instant rubric-aligned grading suggestions while maintaining complete teacher oversight.",
+            "image": "/assets/images/website/p5.png",
+            "id": "InstructoGrade"
         },
         {
-            number: "06",
-            title: "InstructoNex",
-            tagline: "AI Management, Fully in Your Control",
-            description: "Manage AI features through centralized institutional controls. Administrators can enable AI for specific courses, establish user token limits, select preferred AI models, and integrate custom APIs for specialized needs.",
-            image: "/assets/images/website/product3.png",
-            id: "InstructoNex"
+            "number": "06",
+            "title": "InstructoNex",
+            "tagline": "AI Management, Fully in Your Control",
+            "description": "Control AI features through institutional settings for courses, user tokens, model selection, and custom API needs.",
+            "image": "/assets/images/website/product3.png",
+            "id": "InstructoNex"
         }
     ];
     const extendedItems = [
@@ -299,7 +299,7 @@ const ProductsSection = () => {
                                     onMouseLeave={() => setIsAutoPlaying(true)}
                                 >
                                     <div
-                                        className="group border-l-2 border-solid p-4 border-orange-500 h-full cursor-pointer hover:bg-gray-50 transition-colors duration-300"
+                                        className="group border-l-2 border-solid p-4 border-orange-500 h-full cursor-pointer hover:bg-gray-50 transition-colors duration-300 flex flex-col"
                                         onClick={() => handleProductClick(industry.id)}
                                     >
                                         <div className="text-orange-500 text-sm font-semibold mb-4">
@@ -318,6 +318,12 @@ const ProductsSection = () => {
                                         <h4 className="text-lg md:text-xl font-bold mb-4">{industry.title}</h4>
                                         <div className="border-t border-gray-200 my-4"></div>
                                         <p className="text-sm md:text-base">{industry.description}</p>
+                                        <div className="mt-auto pt-4 text-right">
+                                            <span className="text-orange-500 font-medium hover:text-orange-600 transition-colors duration-300 inline-flex items-center">
+                                                View More
+                                                <ChevronRight className="h-4 w-4 ml-1" />
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
                             ))}

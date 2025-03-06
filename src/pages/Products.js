@@ -6,14 +6,17 @@ const Container = ({ children, className = '' }) => (
     {children}
   </div>
 );
-const ProductSection = ({ id, title, number, description, features }) => {
+const ProductSection = ({ id, title, tagline, number, description, features }) => {
   return (
     <div id={id} className="mb-16 scroll-mt-20">
       <div className="flex items-start mb-4">
         <div className="min-w-[3rem] w-12 h-12 aspect-square bg-[#E16B3B] rounded-full flex items-center justify-center text-white font-bold mr-4 flex-shrink-0">
           {number}
         </div>
-        <h3 className="text-4xl mb-6 leading-tight">{title}</h3>
+        <div>
+          <h3 className="text-4xl mb-2 leading-tight">{title}</h3>
+          <h3 className="text-3xl mb-0 leading-tight text-[#E16B3B]">{tagline}</h3>
+        </div>
       </div>
       <div className="ml-16">
         <p className="text-2xl text-[#1B3942] mb-6">{description}</p>
@@ -33,21 +36,6 @@ const ProductSection = ({ id, title, number, description, features }) => {
   );
 };
 const Products = () => {
-  const [animatedText, setAnimatedText] = useState('');
-  const fullText = "Transform education with AI-Powered tools";
-  const aiPoweredIndex = fullText.indexOf("AI-Powered");
-  useEffect(() => {
-    let index = 0;
-    const interval = setInterval(() => {
-      if (index <= fullText.length) {
-        setAnimatedText(fullText.substring(0, index));
-        index++;
-      } else {
-        clearInterval(interval);
-      }
-    }, 100);
-    return () => clearInterval(interval);
-  }, []);
   useEffect(() => {
     const handleScrollToAnchor = () => {
       const url = window.location.href;
@@ -74,31 +62,12 @@ const Products = () => {
       window.removeEventListener('hashchange', handleScrollToAnchor);
     };
   }, []);
-  const renderColoredText = () => {
-    if (animatedText.length <= aiPoweredIndex) {
-      return <span className="text-[#1B3942]">{animatedText}</span>;
-    } else if (animatedText.length <= aiPoweredIndex + 10) {
-      return (
-        <>
-          <span className="text-[#1B3942]">{animatedText.substring(0, aiPoweredIndex)}</span>
-          <span className="text-[#E16B3B]">{animatedText.substring(aiPoweredIndex, animatedText.length)}</span>
-        </>
-      );
-    } else {
-      return (
-        <>
-          <span className="text-[#1B3942]">{animatedText.substring(0, aiPoweredIndex)}</span>
-          <span className="text-[#E16B3B]">AI-Powered</span>
-          <span className="text-[#1B3942]">{animatedText.substring(aiPoweredIndex + 10)}</span>
-        </>
-      );
-    }
-  };
   const features = [
     {
       id: "InstructoGen",
       number: "01",
       title: "InstructoGen – Empower Educators, Effortlessly",
+      tagline: "AI-Powered Course Creator",
       description: "Designing a high-quality course has never been easier. With InstructoGen, educators can generate structured, curriculum-aligned content with just a few inputs—while retaining complete control.",
       features: [
         "Choose from proven methodologies like Bloom's Taxonomy or customize your own",
@@ -112,6 +81,7 @@ const Products = () => {
       id: "InstructoBoost",
       number: "02",
       title: "InstructoBoost – Turn Any Course into an AI-Powered Learning Hub",
+      tagline: "AI-Based Course Enhancer",
       description: "Supercharge existing courses with engaging AI-driven activities. Whether it's a course built using InstructoGen or an existing LMS course, instructors can instantly enhance their content with quizzes, assignments, and discussions—perfectly aligned with learning objectives.",
       features: [
         "Launch the InstructoBoost inside Canvas and other popular LMS platforms",
@@ -124,7 +94,8 @@ const Products = () => {
     {
       id: "InstructoEcho",
       number: "03",
-      title: "InstructoEcho – Your 24/7 Smart Learning Companion",
+      title: "InstructoEcho – Your 24/7 Smart Learning",
+      tagline: "Student Assistant",
       description: "Students deserve instant, judgment-free support—whenever they need it. Our AI-powered Chatbot is context-aware, ensuring responses remain relevant to the course where it's launched.",
       features: [
         "Provide private and secure question-answering for students",
@@ -138,6 +109,7 @@ const Products = () => {
       id: "InstructoPulse",
       number: "04",
       title: "InstructoPulse – Learn by Doing with AI-Powered Adaptation",
+      tagline: "Practice Mode",
       description: "Traditional study methods fall short in personalization. InstructoPulse dynamically adjusts to student responses, providing context-based Q&A exercises tailored to LMS modules, pages, and activities.",
       features: [
         "The AI adapts based on accuracy and response time",
@@ -151,6 +123,7 @@ const Products = () => {
       id: "InstructoGrade",
       number: "05",
       title: "InstructoGrade – Cuts Grading Time Drastically",
+      tagline: "Auto Grader",
       description: "Grading shouldn't be a bottleneck. InstructoGrade eliminates the tediousness of manual assessment by providing instant, rubric-based grading suggestions with teacher review capabilities.",
       features: [
         "Evidence-based marking suggestions for teacher final review and approval",
@@ -164,6 +137,7 @@ const Products = () => {
       id: "InstructoNex",
       number: "06",
       title: "InstructoNex – AI Management, Fully in Your Control",
+      tagline: "Admin Control Panel",
       description: "With centralized AI controls, administrators can customize AI settings for their institution. Enable AI for specific courses, set per-user AI token limits, choose preferred AI models, and even integrate custom AI APIs—all from one powerful dashboard.",
       features: [
         "Gain insights into feature adoption, ROI, and overall efficiency",
@@ -184,27 +158,18 @@ const Products = () => {
               <div className="text-center w-full mx-auto">
                 <h1 className="text-7xl mb-6">
                   <span className="relative">
-                    <span className="absolute -bottom-2 left-0 w-full h-2 bg-[#1B3942] bg-opacity-10"></span>
-                    {renderColoredText()}
-                    <span className="animate-pulse">|</span>
+                    Transform education with <span className='text-[#E16B3B]'>AI-Powered</span> tools
                   </span>
                 </h1>
                 <p className="text-2xl pt-4">
-                  <span className='text-[#1B3942]'>The future of education is adaptive, personalized, and intelligent.</span>
-                  <br />
-                  <span className='text-[#E16B3B]'>Discover how our AI-powered suite can revolutionize your institution.</span>
+                  <div className='text-[#1B3942] pb-2'>The future of education is adaptive, personalized, and intelligent.</div>
+                  <div className='text-[#E16B3B]'>Discover how our AI-powered suite can revolutionize your institution.</div>
                 </p>
               </div>
             </Container>
           </section>
           <section className="py-20">
             <Container>
-              <div className="flex items-center mb-10">
-                <div className="w-2 h-2 bg-[#E16B3B] rounded-full mr-3"></div>
-                <span className="text-sm uppercase tracking-wider">
-                  Our Products
-                </span>
-              </div>
               <h2 className="text-5xl mb-8 leading-tight">
                 Overview
               </h2>
@@ -218,6 +183,7 @@ const Products = () => {
                     id={feature.id}
                     number={feature.number}
                     title={feature.title}
+                    tagline={feature.tagline}
                     description={feature.description}
                     features={feature.features}
                   />
