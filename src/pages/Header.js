@@ -1,32 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import { Mail, MapPin, Menu, X, Twitter, Facebook, Linkedin, Youtube, ChevronDown } from 'lucide-react';
-
 const Container = ({ children, className = '' }) => (
     <div className={`container mx-auto px-4 ${className}`}>
         {children}
     </div>
 );
-
 const Header = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
-    
     const menuItems = [
         { label: 'Home', href: '#home' },
         { label: 'About Us', href: '#about' },
         { label: 'Mission', href: '#mission' },
-        { label: 'Products', href: '#products' },
+        { label: 'Products', href: '/#/products' },
         { label: 'Features', href: '#values' },
     ];
-    
     const socialLinks = [
         { icon: <Twitter size={16} />, label: "Twitter", href: "https://x.com/InstructoH75197" },
         { icon: <Facebook size={16} />, label: "Facebook", href: "https://www.facebook.com/people/InstructoHub/61572722776722/" },
         { icon: <Linkedin size={16} />, label: "LinkedIn", href: "https://www.linkedin.com/company/instructohub" },
         { icon: <Youtube size={16} />, label: "Youtube", href: "https://www.youtube.com/@Instructo-Hub" }
     ];
-
     useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY > 10) {
@@ -35,13 +30,15 @@ const Header = () => {
                 setIsScrolled(false);
             }
         };
-
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
-
     const handleClick = (e, href) => {
         e.preventDefault();
+        if (href.includes("/")) {
+            window.location.href = href;
+            return;
+        }
         const element = document.querySelector(href);
         if (element) {
             const headerOffset = 100;
@@ -54,10 +51,8 @@ const Header = () => {
         }
         setIsMobileMenuOpen(false);
     };
-
     const openModal = () => setIsOpen(true);
     const closeModal = () => setIsOpen(false);
-
     return (
         <>
             <div className="w-full">
@@ -80,9 +75,9 @@ const Header = () => {
                             </div>
                             <div className="flex gap-6">
                                 {socialLinks.map((item, index) => (
-                                    <a 
-                                        key={index} 
-                                        href={item.href} 
+                                    <a
+                                        key={index}
+                                        href={item.href}
                                         className="text-gray-300 hover:text-[#E16B3B] transition-colors"
                                         aria-label={item.label}
                                     >
@@ -153,12 +148,11 @@ const Header = () => {
                             >
                                 View in Action
                             </button>
-                            
                             <div className="mt-6 flex justify-center gap-8">
                                 {socialLinks.map((item, index) => (
-                                    <a 
-                                        key={index} 
-                                        href={item.href} 
+                                    <a
+                                        key={index}
+                                        href={item.href}
                                         className="text-gray-500 hover:text-[#E16B3B] transition-colors"
                                         aria-label={item.label}
                                     >
@@ -173,7 +167,7 @@ const Header = () => {
             {isOpen && (
                 <div className="fixed inset-0 z-50 overflow-y-auto bg-black bg-opacity-75 flex items-center justify-center">
                     <div className="relative w-full max-w-5xl mx-4">
-                        <button 
+                        <button
                             onClick={closeModal}
                             className="absolute -top-12 right-0 text-white hover:text-[#E16B3B] transition-colors"
                             aria-label="Close modal"
@@ -195,5 +189,4 @@ const Header = () => {
         </>
     );
 };
-
 export default Header;

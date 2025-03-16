@@ -3,7 +3,6 @@ import { HashRouter as Router, Route, Routes, useLocation } from 'react-router-d
 import Website from './pages/Website';
 import Products from './pages/Products';
 import './App.css';
-
 function ScrollToTop() {
   const { pathname } = useLocation();
   
@@ -13,7 +12,6 @@ function ScrollToTop() {
   
   return null;
 }
-
 function App() {
   return (
     <Router>
@@ -27,5 +25,4 @@ function App() {
     </Router>
   );
 }
-
 export default App;

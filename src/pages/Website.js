@@ -236,11 +236,9 @@ const ProductsSection = () => {
         }
         return () => clearInterval(intervalId);
     }, [isAutoPlaying, isTransitioning, currentIndex]);
-
     const handleProductClick = (productId) => {
         window.location.href = `#/products#${productId}`;
     };
-
     return (
         <section id="products" className="py-12 md:py-24 bg-white">
             <div className="container mx-auto px-4">

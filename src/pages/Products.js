@@ -43,12 +43,10 @@ const Products = () => {
       if (parts.length > 2) {
         const anchorId = parts[parts.length - 1];
         const element = document.getElementById(anchorId);
-
         if (element) {
           const headerOffset = 140;
           const elementPosition = element.getBoundingClientRect().top;
           const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
           window.scrollTo({
             top: offsetPosition,
             behavior: "smooth"
