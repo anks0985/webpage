@@ -100,7 +100,7 @@ const Header = () => {
                                     {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
                                 </button>
                                 <a href="/" className="text-2xl font-bold">
-                                    <img src="/assets/images/website/Instructo_hub_logo.png" alt="Logo" className="h-8" />
+                                    <img src="https://static.instructohub.com/staticfiles/assets/images/website/Instructo_hub_logo.png" alt="Logo" className="h-8" />
                                 </a>
                             </div>
                             <nav className="hidden md:flex items-center gap-8">

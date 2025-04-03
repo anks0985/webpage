@@ -45,7 +45,7 @@ const Footer = () => {
                 <div className="py-16">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                         <div>
-                            <img src="/assets/images/website/Instructo_hub_logo_white.png" alt="Instructo hub Logo" className="mb-6 max-w-[180px]" />
+                            <img src="https://static.instructohub.com/staticfiles/assets/images/website/Instructo_hub_logo_white.png" alt="Instructo hub Logo" className="mb-6 max-w-[180px]" />
                             <p className="text-gray-300 mt-4">
                                 Empowering education through innovative learning solutions.
                             </p>

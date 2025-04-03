@@ -32,7 +32,7 @@ const HeroSection = () => {
             </Container>
             <div className="w-full overflow-hidden">
                 <img
-                    src="/assets/images/website/banner.png"
+                    src="https://static.instructohub.com/staticfiles/assets/images/website/banner.png"
                     alt="Hero Image"
                     className="w-full h-auto"
                 />
@@ -72,17 +72,17 @@ const ServicesSection = () => {
         {
             title: "Teachers...",
             description: 'Automating course creation and administrative tasks, freeing educators to focus on impactful teaching.',
-            image: "/assets/images/website/teachers.png"
+            image: "https://static.instructohub.com/staticfiles/assets/images/website/teachers.png"
         },
         {
             title: "Students...",
             description: 'Delivering personalized, AI-driven learning experiences that adapt to individual needs for better outcomes.',
-            image: "/assets/images/website/student.png"
+            image: "https://static.instructohub.com/staticfiles/assets/images/website/student.png"
         },
         {
             title: "Admin...",
             description: 'Providing centralized insights and automation to optimize institutional efficiency and decision-making.',
-            image: "/assets/images/website/admin.png"
+            image: "https://static.instructohub.com/staticfiles/assets/images/website/admin.png"
         }
     ];
     return (
@@ -134,7 +134,7 @@ const ProductsSection = () => {
             "title": "InstructoGen",
             "tagline": "Empower Educators, Effortlessly",
             "description": "Create quality courses from simple inputs with AI assistance while maintaining full control over curriculum-aligned content.",
-            "image": "/assets/images/website/p1.png",
+            "image": "https://static.instructohub.com/staticfiles/assets/images/website/p1.png",
             "id": "InstructoGen"
         },
         {
@@ -142,7 +142,7 @@ const ProductsSection = () => {
             "title": "InstructoBoost",
             "tagline": "Turn Any Course into an AI-Powered Learning Hub",
             "description": "Enhance any course with AI-driven quizzes, assignments and discussions that work in InstructoHub or other LMS systems.",
-            "image": "/assets/images/website/p2.png",
+            "image": "https://static.instructohub.com/staticfiles/assets/images/website/p2.png",
             "id": "InstructoBoost"
         },
         {
@@ -150,7 +150,7 @@ const ProductsSection = () => {
             "title": "InstructoEcho",
             "tagline": "Your 24/7 Smart Learning Companion",
             "description": "Always-available AI support that provides course-specific assistance without judgment whenever students need help.",
-            "image": "/assets/images/website/p3.jpg",
+            "image": "https://static.instructohub.com/staticfiles/assets/images/website/p3.jpg",
             "id": "InstructoEcho"
         },
         {
@@ -158,7 +158,7 @@ const ProductsSection = () => {
             "title": "InstructoPulse",
             "tagline": "Learn by Doing with AI-Powered Adaptation",
             "description": "Personalized learning through adaptive exercises that respond to individual progress within specific LMS modules.",
-            "image": "/assets/images/website/product4.png",
+            "image": "https://static.instructohub.com/staticfiles/assets/images/website/product4.png",
             "id": "InstructoPulse"
         },
         {
@@ -166,7 +166,7 @@ const ProductsSection = () => {
             "title": "InstructoGrade",
             "tagline": "Cuts Grading Time Drastically",
             "description": "Speed up assessment with instant rubric-aligned grading suggestions while maintaining complete teacher oversight.",
-            "image": "/assets/images/website/p5.png",
+            "image": "https://static.instructohub.com/staticfiles/assets/images/website/p5.png",
             "id": "InstructoGrade"
         },
         {
@@ -174,7 +174,7 @@ const ProductsSection = () => {
             "title": "InstructoNex",
             "tagline": "AI Management, Fully in Your Control",
             "description": "Control AI features through institutional settings for courses, user tokens, model selection, and custom API needs.",
-            "image": "/assets/images/website/product3.png",
+            "image": "https://static.instructohub.com/staticfiles/assets/images/website/product3.png",
             "id": "InstructoNex"
         }
     ];
@@ -338,7 +338,7 @@ const ParallaxSection = () => {
             <div
                 className="absolute inset-0 w-full h-full bg-no-repeat bg-center bg-cover"
                 style={{
-                    backgroundImage: `url('/assets/images/website/parallax.png')`,
+                    backgroundImage: `url('https://static.instructohub.com/staticfiles/assets/images/website/parallax.png')`,
                     backgroundAttachment: 'fixed',
                     backgroundPosition: 'center',
                 }}
