@@ -64,9 +64,9 @@ const Header = () => {
                     <Container>
                         <div className="flex justify-between items-center">
                             <div className="flex gap-8">
-                                <a href="mailto:info@instructohub.com" className="flex items-center gap-2 text-gray-300 hover:text-brand transition-colors">
+                                <a href="mailto:ankit@instructohub.com" className="flex items-center gap-2 text-gray-300 hover:text-brand transition-colors">
                                     <Mail size={16} />
-                                    <span>info@instructohub.com</span>
+                                    <span>ankit@instructohub.com</span>
                                 </a>
                                 <a href="#" className="flex items-center gap-2 text-gray-300 hover:text-brand transition-colors">
                                     <MapPin size={16} />

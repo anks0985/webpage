@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, MapPin, Facebook, Twitter, Linkedin, Youtube } from 'lucide-react';
+import { Mail, MapPin, Facebook, Twitter, Linkedin, Youtube, Phone } from 'lucide-react';
 const Container = ({ children, className = '' }) => (
     <div className={`container mx-auto px-4 ${className}`}>
         {children}
@@ -17,7 +17,8 @@ const Footer = () => {
         ],
         contactInfo: [
             { icon: <MapPin size={18} />, label: 'Noida, UP, India' },
-            { icon: <Mail size={18} />, label: 'info@instructohub.com' },
+            { icon: <Mail size={18} />, label: 'ankit@instructohub.com' },
+            { icon: <Phone size={18} />, label: '+919810206863' },
         ],
         socialLinks: [
             { icon: <Twitter size={20} />, label: "Twitter", href: "https://x.com/InstructoH75197" },
