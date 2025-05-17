@@ -33,7 +33,7 @@ const HeroSection = () => {
             <div className="w-full overflow-hidden">
                 <img
                     src="https://static.instructohub.com/staticfiles/assets/images/website/banner.png"
-                    alt="Hero Image"
+                    alt="Hero"
                     className="w-full h-auto"
                 />
             </div>
@@ -222,20 +222,12 @@ const ProductsSection = () => {
     ];
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isPaused, setIsPaused] = useState(false);
-    const [direction, setDirection] = useState('next');
     const [isAnimating, setIsAnimating] = useState(false);
     const carouselRef = useRef(null);
     const nextSlide = () => {
         if (isAnimating) return;
         setIsAnimating(true);
-        setDirection('next');
         setCurrentIndex((prevIndex) => (prevIndex + 1) % features.length);
-    };
-    const prevSlide = () => {
-        if (isAnimating) return;
-        setIsAnimating(true);
-        setDirection('prev');
-        setCurrentIndex((prevIndex) => (prevIndex - 1 + features.length) % features.length);
     };
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -255,7 +247,6 @@ const ProductsSection = () => {
     const goToSlide = (index) => {
         if (isAnimating) return;
         setIsAnimating(true);
-        setDirection(index > currentIndex ? 'next' : 'prev');
         setCurrentIndex(index);
     };
     const currentProduct = features[currentIndex];
