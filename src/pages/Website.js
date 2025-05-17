@@ -10,12 +10,12 @@ const Container = ({ children, className = '' }) => (
 const SectionTitle = ({ subtitle, title, alignment = 'left' }) => (
     <div className={`mb-12 ${alignment === 'center' ? 'text-center' : ''}`}>
         <div className="flex items-center mb-4">
-            <div className="w-2 h-2 bg-[#E16B3B] rounded-full mr-3"></div>
-            <span className="text-sm uppercase tracking-wider">
+            <div className="w-2 h-2 bg-brand rounded-full mr-3"></div>
+            <span className="text-sm uppercase tracking-wider text-secondary">
                 {subtitle}
             </span>
         </div>
-        <h2 className="text-4xl md:text-5xl ">
+        <h2 className="text-4xl md:text-5xl text-secondary">
             {title}
         </h2>
     </div>
@@ -25,8 +25,8 @@ const HeroSection = () => {
         <div id="home" className="relative bg-white pt-20">
             <Container>
                 <div className="w-full mb-16">
-                    <h1 className="text-7xl mb-6 ">
-                        Your AI Powered <span style={{ color: "#e16b3b" }}>Application Suite </span><br />for your LMS
+                    <h1 className="text-7xl mb-6 text-secondary">
+                        Your AI Powered <span className="text-brand">Application Suite </span><br />for your LMS
                     </h1>
                 </div>
             </Container>
@@ -45,22 +45,22 @@ const AboutSection = () => {
         <section id="about" className="pt-24 bg-white pb-20">
             <Container>
                 <div className="flex items-center mb-6">
-                    <div className="w-2 h-2 bg-[#E16B3B] rounded-full mr-3"></div>
-                    <span className="text-sm uppercase tracking-wider">
+                    <div className="w-2 h-2 bg-brand rounded-full mr-3"></div>
+                    <span className="text-sm uppercase tracking-wider text-secondary">
                         About Us
                     </span>
                 </div>
                 <div className="grid md:grid-cols-1 gap-12 items-center">
                     <div>
-                        <h2 className="text-5xl mb-6 leading-tight">
+                        <h2 className="text-5xl mb-6 leading-tight text-secondary">
                             Empowering Education Through AI-Driven Solutions.
                         </h2>
                     </div>
-                    <div className='border-l-2 border-solid p-4 border-[#E16B3B]'>
-                        <p className="text-2xl pb-4">
+                    <div className="border-l-2 border-solid p-4 border-brand">
+                        <p className="text-2xl pb-4 text-secondary-700">
                             At InstructoHub, we are revolutionizing education by empowering educators, students, and administrators through AI-driven innovation. Our AI-powered application suite seamlessly integrates with any Learning Management System (LMS), enabling teachers and instructional designers to build courses effortlessly—transforming weeks of work into hours.</p>
-                        <p className="text-2xl pb-4">We enhance student learning experiences by bringing adaptability into the LMS, ensuring personalized learning paths using the same course content. Additionally, our intelligent tools provide administrators and managers with real-time insights, allowing them to monitor, control, and track the impact of AI on their institution's learning ecosystem.</p>
-                        <p className="text-2xl pb-4">With InstructoHub, education becomes smarter, faster, and more efficient—shaping the future of learning.</p>
+                        <p className="text-2xl pb-4 text-secondary-700">We enhance student learning experiences by bringing adaptability into the LMS, ensuring personalized learning paths using the same course content. Additionally, our intelligent tools provide administrators and managers with real-time insights, allowing them to monitor, control, and track the impact of AI on their institution's learning ecosystem.</p>
+                        <p className="text-2xl pb-4 text-secondary-700">With InstructoHub, education becomes smarter, faster, and more efficient—shaping the future of learning.</p>
                     </div>
                 </div>
             </Container>
@@ -86,20 +86,20 @@ const ServicesSection = () => {
         }
     ];
     return (
-        <section id="mission" className="py-16 bg-gray-50">
+        <section id="mission" className="py-16 bg-neutral-50">
             <div className="container mx-auto px-4">
                 <div className="flex items-center mb-8">
-                    <div className="w-2 h-2 bg-[#E16B3B] rounded-full mr-3"></div>
-                    <span className="text-sm uppercase tracking-wider">
+                    <div className="w-2 h-2 bg-brand rounded-full mr-3"></div>
+                    <span className="text-sm uppercase tracking-wider text-secondary">
                         OUR MISSION
                     </span>
                 </div>
-                <h2 className="text-5xl mb-6 leading-tight">
+                <h2 className="text-5xl mb-6 leading-tight text-secondary">
                     Solving Education's Key Challenges for:
                 </h2>
                 <div className="grid md:grid-cols-3 gap-6">
                     {services.map((service, index) => (
-                        <div key={index} className="group relative overflow-hidden rounded-tr-[50px] rounded-bl-[50px] overflow-hidden">
+                        <div key={index} className="group relative rounded-tr-[50px] rounded-bl-[50px] overflow-hidden">
                             <img
                                 src={service.image}
                                 alt={service.title}
@@ -117,7 +117,7 @@ const ServicesSection = () => {
                                     className="inline-flex items-center text-white text-lg font-medium group/link"
                                 >
                                     View More
-                                    <ArrowUpRight className="ml-2 w-5 h-5 text-[#E16B3B] transition-transform duration-300 group-hover/link:translate-x-1" />
+                                    <ArrowUpRight className="ml-2 w-5 h-5 text-brand transition-transform duration-300 group-hover/link:translate-x-1" />
                                 </a>
                             </div>
                         </div>
@@ -132,11 +132,10 @@ const ProductsSection = () => {
         {
             id: "InstructoGen",
             number: "01",
-            title: "InstructoGen – Empower Educators, Effortlessly",
+            title: "InstructoGen - Empower Educators, Effortlessly",
             tagline: "AI-Powered Course Creator",
             description: "Designing a high-quality course has never been easier. With InstructoGen, educators can generate structured, curriculum-aligned content with just a few inputs—while retaining complete control.",
             icon: Star,
-            color: "#E16B3B",
             features: [
                 "Choose from proven methodologies like Bloom's Taxonomy or customize your own",
                 "Define modules, topics, and lessons with ease",
@@ -148,10 +147,9 @@ const ProductsSection = () => {
         {
             id: "InstructoBoost",
             number: "02",
-            title: "InstructoBoost – Turn Any Course into an AI-Powered Learning Hub",
+            title: "InstructoBoost - Turn Any Course into an AI-Powered Learning Hub",
             tagline: "AI-Based Course Enhancer",
             icon: Zap,
-            color: "#1B3942",
             description: "Supercharge existing courses with engaging AI-driven activities. Whether it's a course built using InstructoGen or an existing LMS course, instructors can instantly enhance their content with quizzes, assignments, and discussions—perfectly aligned with learning objectives.",
             features: [
                 "Launch the InstructoBoost inside Canvas and other popular LMS platforms",
@@ -164,10 +162,9 @@ const ProductsSection = () => {
         {
             id: "InstructoEcho",
             number: "03",
-            title: "InstructoEcho – Your 24/7 Smart Learning",
+            title: "InstructoEcho - Your 24/7 Smart Learning",
             tagline: "Student Assistant",
             icon: Clock,
-            color: "#E16B3B",
             description: "Students deserve instant, judgment-free support—whenever they need it. Our AI-powered Chatbot is context-aware, ensuring responses remain relevant to the course where it's launched.",
             features: [
                 "Provide private and secure question-answering for students",
@@ -180,10 +177,9 @@ const ProductsSection = () => {
         {
             id: "InstructoPulse",
             number: "04",
-            title: "InstructoPulse – Learn by Doing with AI-Powered Adaptation",
+            title: "InstructoPulse - Learn by Doing with AI-Powered Adaptation",
             tagline: "Practice Mode",
             icon: Bookmark,
-            color: "#1B3942",
             description: "Traditional study methods fall short in personalization. InstructoPulse dynamically adjusts to student responses, providing context-based Q&A exercises tailored to LMS modules, pages, and activities.",
             features: [
                 "The AI adapts based on accuracy and response time",
@@ -196,10 +192,9 @@ const ProductsSection = () => {
         {
             id: "InstructoGrade",
             number: "05",
-            title: "InstructoGrade – Cuts Grading Time Drastically",
+            title: "InstructoGrade - Cuts Grading Time Drastically",
             tagline: "Auto Grader",
             icon: Award,
-            color: "#E16B3B",
             description: "Grading shouldn't be a bottleneck. InstructoGrade eliminates the tediousness of manual assessment by providing instant, rubric-based grading suggestions with teacher review capabilities.",
             features: [
                 "Evidence-based marking suggestions for teacher final review and approval",
@@ -212,10 +207,9 @@ const ProductsSection = () => {
         {
             id: "InstructoNex",
             number: "06",
-            title: "InstructoNex – AI Management, Fully in Your Control",
+            title: "InstructoNex - AI Management, Fully in Your Control",
             tagline: "Admin Control Panel",
             icon: Shield,
-            color: "#1B3942",
             description: "With centralized AI controls, administrators can customize AI settings for their institution. Enable AI for specific courses, set per-user AI token limits, choose preferred AI models, and even integrate custom AI APIs—all from one powerful dashboard.",
             features: [
                 "Gain insights into feature adoption, ROI, and overall efficiency",
@@ -226,34 +220,29 @@ const ProductsSection = () => {
             ]
         }
     ];
-
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isPaused, setIsPaused] = useState(false);
     const [direction, setDirection] = useState('next');
     const [isAnimating, setIsAnimating] = useState(false);
     const carouselRef = useRef(null);
-
     const nextSlide = () => {
         if (isAnimating) return;
         setIsAnimating(true);
         setDirection('next');
         setCurrentIndex((prevIndex) => (prevIndex + 1) % features.length);
     };
-
     const prevSlide = () => {
         if (isAnimating) return;
         setIsAnimating(true);
         setDirection('prev');
         setCurrentIndex((prevIndex) => (prevIndex - 1 + features.length) % features.length);
     };
-
     useEffect(() => {
         const timer = setTimeout(() => {
             setIsAnimating(false);
         }, 600);
         return () => clearTimeout(timer);
     }, [currentIndex]);
-
     useEffect(() => {
         let interval;
         if (!isPaused) {
@@ -263,41 +252,36 @@ const ProductsSection = () => {
         }
         return () => clearInterval(interval);
     }, [isPaused, currentIndex]);
-
     const goToSlide = (index) => {
         if (isAnimating) return;
         setIsAnimating(true);
         setDirection(index > currentIndex ? 'next' : 'prev');
         setCurrentIndex(index);
     };
-
     const currentProduct = features[currentIndex];
     const IconComponent = currentProduct.icon;
-
     return (
         <div id="products" className="container mx-auto py-12 px-4">
             <div className="mb-12 text-center">
                 <div className="mb-4">
                     <div className="flex items-center mb-4">
-                        <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                        <span className="text-sm uppercase tracking-wider">
+                        <div className="w-2 h-2 bg-brand rounded-full mr-3"></div>
+                        <span className="text-sm uppercase tracking-wider text-secondary">
                             PRODUCT SUITE
                         </span>
                     </div>
-                    <h2 className="text-5xl mb-6 leading-tight">
+                    <h2 className="text-5xl mb-6 leading-tight text-secondary">
                         Overview
                     </h2>
                 </div>
-                <p className="text-lg md:text-xl mb-6 md:mb-8">
+                <p className="text-lg md:text-xl mb-6 md:mb-8 text-secondary-700">
                     Explore our AI-powered solutions designed to enhance every aspect of education.
                     From automating course creation to improving student engagement and streamlining
                     administration, our tools bring efficiency, intelligence, and innovation to your LMS experience.
                 </p>
             </div>
-
             <div
-                className="relative overflow-hidden rounded-xl shadow-2xl"
-                style={{ background: `linear-gradient(135deg, ${currentProduct.color}22, ${currentProduct.color}11)` }}
+                className={`relative overflow-hidden rounded-xl shadow-2xl ${currentIndex % 2 === 0 ? 'bg-brand-50/30' : 'bg-secondary-50/30'}`}
                 onMouseEnter={() => setIsPaused(true)}
                 onMouseLeave={() => setIsPaused(false)}
                 ref={carouselRef}
@@ -310,35 +294,30 @@ const ProductsSection = () => {
                         <div className="md:w-1/4 mb-8 md:mb-0">
                             <div className="flex flex-col items-center md:items-start">
                                 <div
-                                    className="w-24 h-24 rounded-full flex items-center justify-center mb-6 transform transition-transform duration-500 hover:scale-110"
-                                    style={{ backgroundColor: currentProduct.color }}
+                                    className={`w-24 h-24 rounded-full flex items-center justify-center mb-6 transform transition-transform duration-500 hover:scale-110 ${currentIndex % 2 === 0 ? 'bg-brand' : 'bg-secondary'}`}
                                 >
                                     <IconComponent size={48} color="white" />
                                 </div>
-                                <h3 className="text-4xl font-bold mb-3 text-center md:text-left" style={{ color: "#1B3942" }}>{currentProduct.title.split(' – ')[0]}</h3>
-                                <p className="text-2xl mb-4 text-center md:text-left" style={{ color: currentProduct.color }}>{currentProduct.tagline}</p>
+                                <h3 className="text-4xl font-bold mb-3 text-center md:text-left text-secondary">{currentProduct.title.split(' - ')[0]}</h3>
+                                <p className={`text-2xl mb-4 text-center md:text-left ${currentIndex % 2 === 0 ? 'text-brand' : 'text-secondary'}`}>{currentProduct.tagline}</p>
                             </div>
                         </div>
-
                         <div className="md:w-3/4 md:pl-12">
                             <div>
-                                <p className="text-xl mb-8 leading-relaxed">{currentProduct.description}</p>
-
+                                <p className="text-xl mb-8 leading-relaxed text-secondary-700">{currentProduct.description}</p>
                                 <div
-                                    className="rounded-lg p-6"
-                                    style={{ borderLeft: `4px solid ${currentProduct.color}`, backgroundColor: `${currentProduct.color}0A` }}
+                                    className={`rounded-lg p-6 border-l-4 ${currentIndex % 2 === 0 ? 'bg-brand-50 border-brand' : 'bg-secondary-50 border-secondary'}`}
                                 >
-                                    <h4 className="font-bold text-lg mb-4" style={{ color: "#1B3942" }}>KEY FEATURES</h4>
+                                    <h4 className="font-bold text-lg mb-4 text-secondary">KEY FEATURES</h4>
                                     <ul className="space-y-4">
                                         {currentProduct.features.map((feature, idx) => (
-                                            <li key={idx} className="flex items-start animate-fadeIn" style={{ animationDelay: `${idx * 0.1}s` }}>
+                                            <li key={idx} className="flex items-start animate-fadeIn">
                                                 <span
-                                                    className="inline-flex min-w-[1.5rem] w-6 h-6 rounded-full mr-3 flex-shrink-0 items-center justify-center text-white text-sm"
-                                                    style={{ backgroundColor: currentProduct.color }}
+                                                    className={`inline-flex min-w-[1.5rem] w-6 h-6 rounded-full mr-3 flex-shrink-0 items-center justify-center text-white text-sm ${currentIndex % 2 === 0 ? 'bg-brand' : 'bg-secondary'}`}
                                                 >
                                                     {idx + 1}
                                                 </span>
-                                                <span className="text-lg">{feature}</span>
+                                                <span className="text-lg text-secondary-700">{feature}</span>
                                             </li>
                                         ))}
                                     </ul>
@@ -347,58 +326,42 @@ const ProductsSection = () => {
                         </div>
                     </div>
                 </div>
-
                 <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
                     {features.map((item, idx) => (
                         <button
                             key={idx}
                             onClick={() => goToSlide(idx)}
-                            className={`w-3 h-3 rounded-full transition-all duration-300 ${idx === currentIndex ? 'w-8' : ''}`}
-                            style={{ backgroundColor: idx === currentIndex ? "#1B3942" : "#E16B3B33" }}
+                            className={`w-3 h-3 rounded-full transition-all duration-300 ${idx === currentIndex ? 'w-8 bg-secondary' : 'bg-brand-300/50'}`}
                             aria-label={`Go to product ${idx + 1}`}
                         />
                     ))}
                 </div>
             </div>
-
             <div className="mt-12 grid grid-cols-3 md:grid-cols-6 gap-4">
                 {features.map((product, idx) => (
                     <button
                         key={product.id}
                         onClick={() => goToSlide(idx)}
-                        className={`p-4 rounded-lg transition-all duration-300 flex flex-col items-center ${idx === currentIndex ? 'text-white shadow-lg transform scale-105' : 'bg-white hover:shadow-md'
+                        className={`p-4 rounded-lg transition-all duration-300 flex flex-col items-center ${idx === currentIndex
+                            ? 'text-white shadow-lg transform scale-105 ' + (idx % 2 === 0 ? 'bg-brand' : 'bg-secondary')
+                            : 'bg-white hover:shadow-md'
                             }`}
-                        style={{
-                            backgroundColor: idx === currentIndex ? "#1B3942" : "white"
-                        }}
                     >
                         <div
-                            className={`w-10 h-10 rounded-full flex items-center justify-center mb-2`}
-                            style={{
-                                backgroundColor: idx === currentIndex ? "white" : `${product.color}22`,
-                                color: idx === currentIndex ? product.color : "inherit"
-                            }}
+                            className={`w-10 h-10 rounded-full flex items-center justify-center mb-2 ${idx === currentIndex
+                                ? 'bg-white'
+                                : (idx % 2 === 0 ? 'bg-brand-200' : 'bg-secondary-200')
+                                }`}
                         >
                             {React.createElement(product.icon, {
                                 size: 20,
-                                color: idx === currentIndex ? product.color : product.color
+                                className: idx % 2 === 0 ? 'text-brand' : 'text-secondary'
                             })}
                         </div>
-                        <span className="text-xs font-semibold text-center">{product.title.split(' – ')[0]}</span>
+                        <span className="text-xs font-semibold text-center">{product.title.split(' - ')[0]}</span>
                     </button>
                 ))}
             </div>
-
-            <style jsx>{`
-        @keyframes fadeIn {
-          from { opacity: 0; transform: translateY(10px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fadeIn {
-          animation: fadeIn 0.5s ease-out forwards;
-          opacity: 0;
-        }
-      `}</style>
         </div>
     );
 };
@@ -413,15 +376,15 @@ const ParallaxSection = () => {
                     backgroundPosition: 'center',
                 }}
             >
-                <div className="absolute inset-0 bg-black/60" />
+                <div className="absolute inset-0 bg-secondary-900/80" />
             </div>
             <Container className="relative h-full flex items-center">
                 <div className="max-w-3xl">
-                    <p className="font-serif text-3xl md:text-4xl leading-relaxed text-white italic">
+                    <p className="text-3xl md:text-4xl leading-relaxed text-white italic">
                         "Our goal is to enhance learning, empower educators, and create long-term value through AI-driven innovation in education space."
                     </p>
                     <div className="mt-8">
-                        <button className="px-8 py-3 bg-white rounded-full hover:bg-[#E16B3B] hover:text-white transition-colors duration-300">
+                        <button className="px-8 py-3 bg-white text-secondary rounded-full hover:bg-brand hover:text-white transition-colors duration-300">
                             Learn More
                         </button>
                     </div>
@@ -450,7 +413,7 @@ const ValuesSection = () => {
         }
     ];
     return (
-        <section id="values" className="py-24 bg-[#F7F7F7]">
+        <section id="values" className="py-24 bg-neutral-50">
             <Container>
                 <SectionTitle
                     subtitle="Key Features"
@@ -458,11 +421,11 @@ const ValuesSection = () => {
                 />
                 <div className="grid md:grid-cols-2 gap-12">
                     {values.map((value, index) => (
-                        <div key={index} className="group border-l-2 border-solid p-4 border-[#E16B3B]">
-                            <h4 className="text-xl font-bold mb-4">
+                        <div key={index} className="group border-l-2 border-solid p-4 border-brand hover:bg-white hover:shadow-md transition-all duration-300">
+                            <h4 className="text-xl font-bold mb-4 text-secondary">
                                 {value.title}
                             </h4>
-                            <p className="mb-6">
+                            <p className="mb-6 text-secondary-700">
                                 {value.description}
                             </p>
                         </div>
@@ -499,11 +462,11 @@ const TestimonialsSection = () => {
                 />
                 <div className="grid md:grid-cols-3 gap-8">
                     {testimonials.map((testimonial, index) => (
-                        <div key={index} className="bg-white p-8 rounded-lg shadow-lg">
-                            <p className="mb-6 italic">"{testimonial.quote}"</p>
+                        <div key={index} className="bg-white p-8 rounded-lg shadow-lg border-t-4 border-brand">
+                            <p className="mb-6 italic text-secondary-700">"{testimonial.quote}"</p>
                             <div>
-                                <p className="font-medium ">{testimonial.author}</p>
-                                <p className="text-sm ">{testimonial.position}</p>
+                                <p className="font-medium text-secondary">{testimonial.author}</p>
+                                <p className="text-sm text-secondary-400">{testimonial.position}</p>
                             </div>
                         </div>
                     ))}
@@ -514,7 +477,7 @@ const TestimonialsSection = () => {
 };
 const Website = () => {
     return (
-        <div style={{ fontFamily: 'PT Serif', color: "#1B3942" }} className="min-h-screen flex flex-col">
+        <div className="font-serif min-h-screen flex flex-col text-secondary">
             <Header />
             <main className="flex-grow">
                 <HeroSection />

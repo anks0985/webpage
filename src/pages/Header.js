@@ -60,15 +60,15 @@ const Header = () => {
                 <div className="h-16" />
             </div>
             <header className={`w-full fixed top-0 z-50 transition-all duration-300 ${isScrolled ? 'shadow-md' : ''}`}>
-                <div className="bg-[#1B3942] text-white py-3 hidden md:block">
+                <div className="bg-secondary text-white py-3 hidden md:block">
                     <Container>
                         <div className="flex justify-between items-center">
                             <div className="flex gap-8">
-                                <a href="mailto:info@instructohub.com" className="flex items-center gap-2 text-gray-300 hover:text-[#E16B3B] transition-colors">
+                                <a href="mailto:info@instructohub.com" className="flex items-center gap-2 text-gray-300 hover:text-brand transition-colors">
                                     <Mail size={16} />
                                     <span>info@instructohub.com</span>
                                 </a>
-                                <a href="#" className="flex items-center gap-2 text-gray-300 hover:text-[#E16B3B] transition-colors">
+                                <a href="#" className="flex items-center gap-2 text-gray-300 hover:text-brand transition-colors">
                                     <MapPin size={16} />
                                     <span>Noida, UP, India</span>
                                 </a>
@@ -78,7 +78,7 @@ const Header = () => {
                                     <a
                                         key={index}
                                         href={item.href}
-                                        className="text-gray-300 hover:text-[#E16B3B] transition-colors"
+                                        className="text-gray-300 hover:text-brand transition-colors"
                                         aria-label={item.label}
                                     >
                                         {item.icon}
@@ -93,7 +93,7 @@ const Header = () => {
                         <div className="flex justify-between items-center">
                             <div className="flex items-center gap-6">
                                 <button
-                                    className="md:hidden text-gray-700 hover:text-[#E16B3B] transition-colors"
+                                    className="md:hidden text-secondary-700 hover:text-brand transition-colors"
                                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                                     aria-label="Toggle menu"
                                 >
@@ -109,7 +109,7 @@ const Header = () => {
                                         <a
                                             href={item.href}
                                             onClick={(e) => handleClick(e, item.href)}
-                                            className="flex items-center gap-1 text-gray-700 hover:text-[#E16B3B] transition-colors py-2 relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-[#E16B3B] after:transition-all after:duration-300 hover:after:w-full"
+                                            className="flex items-center gap-1 text-secondary-700 hover:text-brand transition-colors py-2 relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-brand after:transition-all after:duration-300 hover:after:w-full"
                                         >
                                             {item.label}
                                             {item.subItems && <ChevronDown size={16} />}
@@ -119,7 +119,7 @@ const Header = () => {
                             </nav>
                             <div className="flex items-center gap-6">
                                 <button
-                                    className="hidden md:block px-6 py-2.5 bg-[#E16B3B] text-white rounded-md hover:bg-[#f17c4d] transition-colors shadow-md hover:shadow-lg"
+                                    className="hidden md:block px-6 py-2.5 bg-brand text-white rounded-md hover:bg-brand-600 transition-colors shadow-md hover:shadow-lg"
                                     onClick={openModal}
                                 >
                                     View in Action
@@ -135,7 +135,7 @@ const Header = () => {
                                 <a
                                     href={item.href}
                                     onClick={(e) => handleClick(e, item.href)}
-                                    className="block px-6 py-4 text-gray-700 hover:bg-gray-50 hover:text-[#E16B3B] transition-colors"
+                                    className="block px-6 py-4 text-secondary-700 hover:bg-gray-50 hover:text-brand transition-colors"
                                 >
                                     {item.label}
                                 </a>
@@ -143,7 +143,7 @@ const Header = () => {
                         ))}
                         <div className="border-t border-gray-100 p-6">
                             <button
-                                className="w-full px-6 py-3 bg-[#E16B3B] text-white rounded-md hover:bg-[#f17c4d] transition-colors shadow-md"
+                                className="w-full px-6 py-3 bg-brand text-white rounded-md hover:bg-brand-600 transition-colors shadow-md"
                                 onClick={openModal}
                             >
                                 View in Action
@@ -153,7 +153,7 @@ const Header = () => {
                                     <a
                                         key={index}
                                         href={item.href}
-                                        className="text-gray-500 hover:text-[#E16B3B] transition-colors"
+                                        className="text-gray-500 hover:text-brand transition-colors"
                                         aria-label={item.label}
                                     >
                                         {item.icon}
@@ -169,7 +169,7 @@ const Header = () => {
                     <div className="relative w-full max-w-5xl mx-4">
                         <button
                             onClick={closeModal}
-                            className="absolute -top-12 right-0 text-white hover:text-[#E16B3B] transition-colors"
+                            className="absolute -top-12 right-0 text-white hover:text-brand transition-colors"
                             aria-label="Close modal"
                         >
                             <X size={24} />

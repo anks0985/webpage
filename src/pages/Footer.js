@@ -40,7 +40,7 @@ const Footer = () => {
         }
     };
     return (
-        <footer className="bg-[#1B3942] text-white border-t-4 border-[#E16B3B]">
+        <footer className="bg-secondary text-white border-t-4 border-brand">
             <Container>
                 <div className="py-16">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -54,7 +54,7 @@ const Footer = () => {
                                     <a
                                         key={index}
                                         href={link.href}
-                                        className="bg-[#E16B3B] p-2 rounded-full text-white hover:bg-[#f17c4d] transition-colors"
+                                        className="bg-brand p-2 rounded-full text-white hover:bg-brand-600 transition-colors"
                                         aria-label={link.label}
                                     >
                                         {link.icon}
@@ -63,7 +63,7 @@ const Footer = () => {
                             </div>
                         </div>
                         <div>
-                            <h3 className="text-lg font-semibold mb-6 relative after:content-[''] after:absolute after:left-0 after:-bottom-2 after:h-1 after:w-16 after:bg-[#E16B3B]">
+                            <h3 className="text-lg font-semibold mb-6 relative after:content-[''] after:absolute after:left-0 after:-bottom-2 after:h-1 after:w-16 after:bg-brand">
                                 Quick Links
                             </h3>
                             <nav className="space-y-3">
@@ -72,7 +72,7 @@ const Footer = () => {
                                         key={index}
                                         href={link.href}
                                         onClick={(e) => handleClick(e, link.href)}
-                                        className="block text-gray-300 hover:text-[#E16B3B] transition-colors"
+                                        className="block text-gray-300 hover:text-brand transition-colors"
                                     >
                                         {link.label}
                                     </a>
@@ -80,13 +80,13 @@ const Footer = () => {
                             </nav>
                         </div>
                         <div>
-                            <h3 className="text-lg font-semibold mb-6 relative after:content-[''] after:absolute after:left-0 after:-bottom-2 after:h-1 after:w-16 after:bg-[#E16B3B]">
+                            <h3 className="text-lg font-semibold mb-6 relative after:content-[''] after:absolute after:left-0 after:-bottom-2 after:h-1 after:w-16 after:bg-brand">
                                 Contact Us
                             </h3>
                             <div className="space-y-4">
                                 {footerLinks.contactInfo.map((item, index) => (
                                     <div key={index} className="flex items-start">
-                                        <div className="text-[#E16B3B] mr-3 mt-1">
+                                        <div className="text-brand mr-3 mt-1">
                                             {item.icon}
                                         </div>
                                         <span className="text-gray-300">{item.label}</span>
@@ -95,7 +95,7 @@ const Footer = () => {
                             </div>
                         </div>
                         <div>
-                            <h3 className="text-lg font-semibold mb-6 relative after:content-[''] after:absolute after:left-0 after:-bottom-2 after:h-1 after:w-16 after:bg-[#E16B3B]">
+                            <h3 className="text-lg font-semibold mb-6 relative after:content-[''] after:absolute after:left-0 after:-bottom-2 after:h-1 after:w-16 after:bg-brand">
                                 Newsletter
                             </h3>
                             <p className="text-gray-300 mb-4">
@@ -106,11 +106,11 @@ const Footer = () => {
                                     <input
                                         type="email"
                                         placeholder="Your email address"
-                                        className="px-4 py-2 bg-[#2A4A54] text-white rounded border border-gray-700 focus:outline-none focus:border-[#E16B3B]"
+                                        className="px-4 py-2 bg-secondary-600 text-white rounded border border-gray-700 focus:outline-none focus:border-brand"
                                     />
                                     <button
                                         type="submit"
-                                        className="px-4 py-2 bg-[#E16B3B] text-white rounded hover:bg-[#f17c4d] transition-colors"
+                                        className="px-4 py-2 bg-brand text-white rounded hover:bg-brand-600 transition-colors"
                                     >
                                         Subscribe
                                     </button>
@@ -125,13 +125,13 @@ const Footer = () => {
                             © {currentYear} Instructo Hub, All Rights Reserved
                         </p>
                         <div className="flex space-x-6 mt-4 md:mt-0">
-                            <a href="#" className="text-sm text-gray-300 hover:text-[#E16B3B] transition-colors">
+                            <a href="#" className="text-sm text-gray-300 hover:text-brand transition-colors">
                                 Privacy Policy
                             </a>
-                            <a href="#" className="text-sm text-gray-300 hover:text-[#E16B3B] transition-colors">
+                            <a href="#" className="text-sm text-gray-300 hover:text-brand transition-colors">
                                 Terms of Service
                             </a>
-                            <a href="#" className="text-sm text-gray-300 hover:text-[#E16B3B] transition-colors">
+                            <a href="#" className="text-sm text-gray-300 hover:text-brand transition-colors">
                                 Cookie Policy
                             </a>
                         </div>

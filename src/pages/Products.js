@@ -64,7 +64,7 @@ const Products = () => {
     {
       id: "InstructoGen",
       number: "01",
-      title: "InstructoGen – Empower Educators, Effortlessly",
+      title: "InstructoGen - Empower Educators, Effortlessly",
       tagline: "AI-Powered Course Creator",
       description: "Designing a high-quality course has never been easier. With InstructoGen, educators can generate structured, curriculum-aligned content with just a few inputs—while retaining complete control.",
       features: [
@@ -78,7 +78,7 @@ const Products = () => {
     {
       id: "InstructoBoost",
       number: "02",
-      title: "InstructoBoost – Turn Any Course into an AI-Powered Learning Hub",
+      title: "InstructoBoost - Turn Any Course into an AI-Powered Learning Hub",
       tagline: "AI-Based Course Enhancer",
       description: "Supercharge existing courses with engaging AI-driven activities. Whether it's a course built using InstructoGen or an existing LMS course, instructors can instantly enhance their content with quizzes, assignments, and discussions—perfectly aligned with learning objectives.",
       features: [
@@ -92,7 +92,7 @@ const Products = () => {
     {
       id: "InstructoEcho",
       number: "03",
-      title: "InstructoEcho – Your 24/7 Smart Learning",
+      title: "InstructoEcho - Your 24/7 Smart Learning",
       tagline: "Student Assistant",
       description: "Students deserve instant, judgment-free support—whenever they need it. Our AI-powered Chatbot is context-aware, ensuring responses remain relevant to the course where it's launched.",
       features: [
@@ -106,7 +106,7 @@ const Products = () => {
     {
       id: "InstructoPulse",
       number: "04",
-      title: "InstructoPulse – Learn by Doing with AI-Powered Adaptation",
+      title: "InstructoPulse - Learn by Doing with AI-Powered Adaptation",
       tagline: "Practice Mode",
       description: "Traditional study methods fall short in personalization. InstructoPulse dynamically adjusts to student responses, providing context-based Q&A exercises tailored to LMS modules, pages, and activities.",
       features: [
@@ -120,7 +120,7 @@ const Products = () => {
     {
       id: "InstructoGrade",
       number: "05",
-      title: "InstructoGrade – Cuts Grading Time Drastically",
+      title: "InstructoGrade - Cuts Grading Time Drastically",
       tagline: "Auto Grader",
       description: "Grading shouldn't be a bottleneck. InstructoGrade eliminates the tediousness of manual assessment by providing instant, rubric-based grading suggestions with teacher review capabilities.",
       features: [
@@ -134,7 +134,7 @@ const Products = () => {
     {
       id: "InstructoNex",
       number: "06",
-      title: "InstructoNex – AI Management, Fully in Your Control",
+      title: "InstructoNex - AI Management, Fully in Your Control",
       tagline: "Admin Control Panel",
       description: "With centralized AI controls, administrators can customize AI settings for their institution. Enable AI for specific courses, set per-user AI token limits, choose preferred AI models, and even integrate custom AI APIs—all from one powerful dashboard.",
       features: [

@@ -5,11 +5,9 @@ import Products from './pages/Products';
 import './App.css';
 function ScrollToTop() {
   const { pathname } = useLocation();
-
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
-
   return null;
 }
 function App() {
@@ -19,7 +17,7 @@ function App() {
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Website />} />
-          <Route path="/products" element={<Products />} />
+          {/* <Route path="/products" element={<Products />} /> */}
         </Routes>
       </div>
     </Router>
