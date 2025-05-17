@@ -275,7 +275,7 @@ const ProductsSection = () => {
     const IconComponent = currentProduct.icon;
 
     return (
-        <div className="container mx-auto py-12 px-4">
+        <div id="products" className="container mx-auto py-12 px-4">
             <div className="mb-12 text-center">
                 <div className="mb-4">
                     <div className="flex items-center mb-4">
