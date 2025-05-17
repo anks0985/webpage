@@ -1,15 +1,15 @@
 import React from 'react';
-import { HashRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Website from './pages/Website';
 import Products from './pages/Products';
 import './App.css';
 function ScrollToTop() {
   const { pathname } = useLocation();
-  
+
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
-  
+
   return null;
 }
 function App() {

@@ -13,7 +13,7 @@ const Header = () => {
         { label: 'Home', href: '#home' },
         { label: 'About Us', href: '#about' },
         { label: 'Mission', href: '#mission' },
-        { label: 'Products', href: '/#/products' },
+        { label: 'Products', href: '#products' },
         { label: 'Features', href: '#values' },
     ];
     const socialLinks = [

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ArrowUpRight, ChevronRight, ChevronLeft } from 'lucide-react';
+import { ArrowUpRight, Bookmark, Star, Clock, Zap, Award, Shield } from 'lucide-react';
 import Header from './Header';
 import Footer from './Footer';
 const Container = ({ children, className = '' }) => (
@@ -128,208 +128,278 @@ const ServicesSection = () => {
     );
 };
 const ProductsSection = () => {
-    const originalIndustries = [
+    const features = [
         {
-            "number": "01",
-            "title": "InstructoGen",
-            "tagline": "Empower Educators, Effortlessly",
-            "description": "Create quality courses from simple inputs with AI assistance while maintaining full control over curriculum-aligned content.",
-            "image": "https://static.instructohub.com/staticfiles/assets/images/website/p1.png",
-            "id": "InstructoGen"
+            id: "InstructoGen",
+            number: "01",
+            title: "InstructoGen – Empower Educators, Effortlessly",
+            tagline: "AI-Powered Course Creator",
+            description: "Designing a high-quality course has never been easier. With InstructoGen, educators can generate structured, curriculum-aligned content with just a few inputs—while retaining complete control.",
+            icon: Star,
+            color: "#E16B3B",
+            features: [
+                "Choose from proven methodologies like Bloom's Taxonomy or customize your own",
+                "Define modules, topics, and lessons with ease",
+                "Fine-tune AI-generated content with teacher-driven prompts",
+                "Seamlessly enrich courses with AI-suggested images, videos, and media",
+                "Intuitive, educator-friendly interface with no technical complexity"
+            ]
         },
         {
-            "number": "02",
-            "title": "InstructoBoost",
-            "tagline": "Turn Any Course into an AI-Powered Learning Hub",
-            "description": "Enhance any course with AI-driven quizzes, assignments and discussions that work in InstructoHub or other LMS systems.",
-            "image": "https://static.instructohub.com/staticfiles/assets/images/website/p2.png",
-            "id": "InstructoBoost"
+            id: "InstructoBoost",
+            number: "02",
+            title: "InstructoBoost – Turn Any Course into an AI-Powered Learning Hub",
+            tagline: "AI-Based Course Enhancer",
+            icon: Zap,
+            color: "#1B3942",
+            description: "Supercharge existing courses with engaging AI-driven activities. Whether it's a course built using InstructoGen or an existing LMS course, instructors can instantly enhance their content with quizzes, assignments, and discussions—perfectly aligned with learning objectives.",
+            features: [
+                "Launch the InstructoBoost inside Canvas and other popular LMS platforms",
+                "Generate quizzes, assignments, and discussions that align with learning objectives",
+                "Enhance existing courses without rebuilding from scratch",
+                "Transform static content into interactive learning experiences",
+                "Increase student engagement and participation with AI-powered activities"
+            ]
         },
         {
-            "number": "03",
-            "title": "InstructoEcho",
-            "tagline": "Your 24/7 Smart Learning Companion",
-            "description": "Always-available AI support that provides course-specific assistance without judgment whenever students need help.",
-            "image": "https://static.instructohub.com/staticfiles/assets/images/website/p3.jpg",
-            "id": "InstructoEcho"
+            id: "InstructoEcho",
+            number: "03",
+            title: "InstructoEcho – Your 24/7 Smart Learning",
+            tagline: "Student Assistant",
+            icon: Clock,
+            color: "#E16B3B",
+            description: "Students deserve instant, judgment-free support—whenever they need it. Our AI-powered Chatbot is context-aware, ensuring responses remain relevant to the course where it's launched.",
+            features: [
+                "Provide private and secure question-answering for students",
+                "Eliminate peer pressure while gaining real-time assistance",
+                "Clarify concepts and answer common queries instantly",
+                "Reduce repetitive questions for educators",
+                "Support diverse learning needs and paces"
+            ]
         },
         {
-            "number": "04",
-            "title": "InstructoPulse",
-            "tagline": "Learn by Doing with AI-Powered Adaptation",
-            "description": "Personalized learning through adaptive exercises that respond to individual progress within specific LMS modules.",
-            "image": "https://static.instructohub.com/staticfiles/assets/images/website/product4.png",
-            "id": "InstructoPulse"
+            id: "InstructoPulse",
+            number: "04",
+            title: "InstructoPulse – Learn by Doing with AI-Powered Adaptation",
+            tagline: "Practice Mode",
+            icon: Bookmark,
+            color: "#1B3942",
+            description: "Traditional study methods fall short in personalization. InstructoPulse dynamically adjusts to student responses, providing context-based Q&A exercises tailored to LMS modules, pages, and activities.",
+            features: [
+                "The AI adapts based on accuracy and response time",
+                "Provides interactive, personalized learning experiences",
+                "Enables conversational AI discussions to deepen understanding",
+                "Makes learning more engaging and effective",
+                "Reinforces concepts through active practice"
+            ]
         },
         {
-            "number": "05",
-            "title": "InstructoGrade",
-            "tagline": "Cuts Grading Time Drastically",
-            "description": "Speed up assessment with instant rubric-aligned grading suggestions while maintaining complete teacher oversight.",
-            "image": "https://static.instructohub.com/staticfiles/assets/images/website/p5.png",
-            "id": "InstructoGrade"
+            id: "InstructoGrade",
+            number: "05",
+            title: "InstructoGrade – Cuts Grading Time Drastically",
+            tagline: "Auto Grader",
+            icon: Award,
+            color: "#E16B3B",
+            description: "Grading shouldn't be a bottleneck. InstructoGrade eliminates the tediousness of manual assessment by providing instant, rubric-based grading suggestions with teacher review capabilities.",
+            features: [
+                "Evidence-based marking suggestions for teacher final review and approval",
+                "Review AI-generated grading insights with a user-friendly interface",
+                "Make adjustments where needed without spending hours reviewing submissions",
+                "Focus on meaningful feedback while AI handles routine assessment",
+                "Process large volumes of submissions efficiently"
+            ]
         },
         {
-            "number": "06",
-            "title": "InstructoNex",
-            "tagline": "AI Management, Fully in Your Control",
-            "description": "Control AI features through institutional settings for courses, user tokens, model selection, and custom API needs.",
-            "image": "https://static.instructohub.com/staticfiles/assets/images/website/product3.png",
-            "id": "InstructoNex"
+            id: "InstructoNex",
+            number: "06",
+            title: "InstructoNex – AI Management, Fully in Your Control",
+            tagline: "Admin Control Panel",
+            icon: Shield,
+            color: "#1B3942",
+            description: "With centralized AI controls, administrators can customize AI settings for their institution. Enable AI for specific courses, set per-user AI token limits, choose preferred AI models, and even integrate custom AI APIs—all from one powerful dashboard.",
+            features: [
+                "Gain insights into feature adoption, ROI, and overall efficiency",
+                "Ensure your AI strategy delivers real impact",
+                "Monitor usage metrics across departments and courses",
+                "Implement institution-wide AI policies consistently",
+                "Make data-driven decisions about educational technology"
+            ]
         }
     ];
-    const extendedItems = [
-        ...originalIndustries,
-        ...originalIndustries,
-        ...originalIndustries,
-        ...originalIndustries,
-        ...originalIndustries
-    ].map((item, index) => ({
-        ...item,
-        uniqueId: `${item.number}-${index}`
-    }));
+
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [isTransitioning, setIsTransitioning] = useState(false);
-    const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-    const sliderRef = useRef(null);
-    const getSlideWidth = () => {
-        if (typeof window !== 'undefined') {
-            return window.innerWidth < 768 ? 100 : 100 / 3;
-        }
-        return 100 / 3;
+    const [isPaused, setIsPaused] = useState(false);
+    const [direction, setDirection] = useState('next');
+    const [isAnimating, setIsAnimating] = useState(false);
+    const carouselRef = useRef(null);
+
+    const nextSlide = () => {
+        if (isAnimating) return;
+        setIsAnimating(true);
+        setDirection('next');
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % features.length);
     };
-    const [slideWidth, setSlideWidth] = useState(getSlideWidth());
+
+    const prevSlide = () => {
+        if (isAnimating) return;
+        setIsAnimating(true);
+        setDirection('prev');
+        setCurrentIndex((prevIndex) => (prevIndex - 1 + features.length) % features.length);
+    };
+
     useEffect(() => {
-        const handleResize = () => {
-            setSlideWidth(getSlideWidth());
-        };
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
-    const moveSlider = (direction) => {
-        if (isTransitioning || !sliderRef.current) return;
-        setIsTransitioning(true);
-        const newIndex = currentIndex + direction;
-        if (newIndex >= 0 && newIndex < extendedItems.length - (window.innerWidth < 768 ? 1 : 2)) {
-            setCurrentIndex(newIndex);
-            const slider = sliderRef.current;
-            slider.style.transition = 'transform 500ms ease-in-out';
-            slider.style.transform = `translateX(-${slideWidth * newIndex}%)`;
-        }
-    };
-    const handleTransitionEnd = () => {
-        setIsTransitioning(false);
-    };
+        const timer = setTimeout(() => {
+            setIsAnimating(false);
+        }, 600);
+        return () => clearTimeout(timer);
+    }, [currentIndex]);
+
     useEffect(() => {
-        let intervalId;
-        if (isAutoPlaying && !isTransitioning) {
-            intervalId = setInterval(() => {
-                if (currentIndex < extendedItems.length - (window.innerWidth < 768 ? 1 : 3)) {
-                    moveSlider(1);
-                } else {
-                    setCurrentIndex(0);
-                    const slider = sliderRef.current;
-                    slider.style.transition = 'none';
-                    slider.style.transform = 'translateX(0)';
-                }
-            }, 3000);
+        let interval;
+        if (!isPaused) {
+            interval = setInterval(() => {
+                nextSlide();
+            }, 5000);
         }
-        return () => clearInterval(intervalId);
-    }, [isAutoPlaying, isTransitioning, currentIndex]);
-    const handleProductClick = (productId) => {
-        window.location.href = `#/products#${productId}`;
+        return () => clearInterval(interval);
+    }, [isPaused, currentIndex]);
+
+    const goToSlide = (index) => {
+        if (isAnimating) return;
+        setIsAnimating(true);
+        setDirection(index > currentIndex ? 'next' : 'prev');
+        setCurrentIndex(index);
     };
+
+    const currentProduct = features[currentIndex];
+    const IconComponent = currentProduct.icon;
+
     return (
-        <section id="products" className="py-12 md:py-24 bg-white">
-            <div className="container mx-auto px-4">
-                <div className="flex flex-col md:flex-row gap-8 md:gap-16">
-                    <div className="md:w-1/4">
-                        <div className="mb-4">
-                            <div className="flex items-center mb-4">
-                                <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                                <span className="text-sm uppercase tracking-wider">
-                                    PRODUCT SUITE
-                                </span>
-                            </div>
-                            <h2 className="text-5xl mb-6 leading-tight">
-                                Overview
-                            </h2>
-                        </div>
-                        <p className="text-lg md:text-xl mb-6 md:mb-8">
-                            Explore our AI-powered solutions designed to enhance every aspect of education.
-                            From automating course creation to improving student engagement and streamlining
-                            administration, our tools bring efficiency, intelligence, and innovation to your LMS experience.
-                        </p>
-                        <button className="w-full md:w-auto px-6 md:px-8 py-3 text-sm font-semibold border border-gray-900 rounded-full hover:bg-gray-900 hover:text-white transition-colors duration-300"
-                            onClick={() => window.location.href = '#/products'}
-                        >
-                            SEE MORE
-                        </button>
-                        <div className="flex gap-4 mt-6 md:mt-8 justify-center md:justify-start">
-                            <button
-                                onClick={() => moveSlider(-1)}
-                                disabled={isTransitioning || currentIndex === 0}
-                                className="p-2 rounded-full border border-gray-700 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
-                            >
-                                <ChevronLeft size={24} />
-                            </button>
-                            <button
-                                onClick={() => moveSlider(1)}
-                                disabled={isTransitioning || currentIndex >= extendedItems.length - (window.innerWidth < 768 ? 1 : 3)}
-                                className="p-2 rounded-full border border-gray-700 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
-                            >
-                                <ChevronRight size={24} />
-                            </button>
-                        </div>
+        <div className="container mx-auto py-12 px-4">
+            <div className="mb-12 text-center">
+                <div className="mb-4">
+                    <div className="flex items-center mb-4">
+                        <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
+                        <span className="text-sm uppercase tracking-wider">
+                            PRODUCT SUITE
+                        </span>
                     </div>
-                    <div className="flex-1 overflow-hidden">
-                        <div
-                            ref={sliderRef}
-                            className="flex"
-                            onTransitionEnd={handleTransitionEnd}
-                        >
-                            {extendedItems.map((industry) => (
+                    <h2 className="text-5xl mb-6 leading-tight">
+                        Overview
+                    </h2>
+                </div>
+                <p className="text-lg md:text-xl mb-6 md:mb-8">
+                    Explore our AI-powered solutions designed to enhance every aspect of education.
+                    From automating course creation to improving student engagement and streamlining
+                    administration, our tools bring efficiency, intelligence, and innovation to your LMS experience.
+                </p>
+            </div>
+
+            <div
+                className="relative overflow-hidden rounded-xl shadow-2xl"
+                style={{ background: `linear-gradient(135deg, ${currentProduct.color}22, ${currentProduct.color}11)` }}
+                onMouseEnter={() => setIsPaused(true)}
+                onMouseLeave={() => setIsPaused(false)}
+                ref={carouselRef}
+            >
+                <div
+                    key={currentProduct.id}
+                    className={`p-8 md:p-12 transition-opacity duration-500 ${isAnimating ? 'opacity-0' : 'opacity-100'}`}
+                >
+                    <div className="flex flex-col md:flex-row">
+                        <div className="md:w-1/4 mb-8 md:mb-0">
+                            <div className="flex flex-col items-center md:items-start">
                                 <div
-                                    key={industry.uniqueId}
-                                    className="flex-shrink-0 w-full md:w-1/3 px-2 md:px-4"
-                                    style={{ width: `${slideWidth}%` }}
-                                    onMouseEnter={() => setIsAutoPlaying(false)}
-                                    onMouseLeave={() => setIsAutoPlaying(true)}
+                                    className="w-24 h-24 rounded-full flex items-center justify-center mb-6 transform transition-transform duration-500 hover:scale-110"
+                                    style={{ backgroundColor: currentProduct.color }}
                                 >
-                                    <div
-                                        className="group border-l-2 border-solid p-4 border-orange-500 h-full cursor-pointer hover:bg-gray-50 transition-colors duration-300 flex flex-col"
-                                        onClick={() => handleProductClick(industry.id)}
-                                    >
-                                        <div className="text-orange-500 text-sm font-semibold mb-4">
-                                            [{industry.number}]
-                                        </div>
-                                        <div className="relative overflow-hidden mb-4">
-                                            <img
-                                                src={industry.image}
-                                                alt={industry.title}
-                                                className="w-full h-full object-cover"
-                                            />
-                                            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center">
-                                                <div className="text-white text-center font-bold text-xl md:text-2xl px-4 py-3 w-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">{industry.tagline}</div>
-                                            </div>
-                                        </div>
-                                        <h4 className="text-lg md:text-xl font-bold mb-4">{industry.title}</h4>
-                                        <div className="border-t border-gray-200 my-4"></div>
-                                        <p className="text-sm md:text-base">{industry.description}</p>
-                                        <div className="mt-auto pt-4 text-right">
-                                            <span className="text-orange-500 font-medium hover:text-orange-600 transition-colors duration-300 inline-flex items-center">
-                                                View More
-                                                <ChevronRight className="h-4 w-4 ml-1" />
-                                            </span>
-                                        </div>
-                                    </div>
+                                    <IconComponent size={48} color="white" />
                                 </div>
-                            ))}
+                                <h3 className="text-4xl font-bold mb-3 text-center md:text-left" style={{ color: "#1B3942" }}>{currentProduct.title.split(' – ')[0]}</h3>
+                                <p className="text-2xl mb-4 text-center md:text-left" style={{ color: currentProduct.color }}>{currentProduct.tagline}</p>
+                            </div>
+                        </div>
+
+                        <div className="md:w-3/4 md:pl-12">
+                            <div>
+                                <p className="text-xl mb-8 leading-relaxed">{currentProduct.description}</p>
+
+                                <div
+                                    className="rounded-lg p-6"
+                                    style={{ borderLeft: `4px solid ${currentProduct.color}`, backgroundColor: `${currentProduct.color}0A` }}
+                                >
+                                    <h4 className="font-bold text-lg mb-4" style={{ color: "#1B3942" }}>KEY FEATURES</h4>
+                                    <ul className="space-y-4">
+                                        {currentProduct.features.map((feature, idx) => (
+                                            <li key={idx} className="flex items-start animate-fadeIn" style={{ animationDelay: `${idx * 0.1}s` }}>
+                                                <span
+                                                    className="inline-flex min-w-[1.5rem] w-6 h-6 rounded-full mr-3 flex-shrink-0 items-center justify-center text-white text-sm"
+                                                    style={{ backgroundColor: currentProduct.color }}
+                                                >
+                                                    {idx + 1}
+                                                </span>
+                                                <span className="text-lg">{feature}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
+                    {features.map((item, idx) => (
+                        <button
+                            key={idx}
+                            onClick={() => goToSlide(idx)}
+                            className={`w-3 h-3 rounded-full transition-all duration-300 ${idx === currentIndex ? 'w-8' : ''}`}
+                            style={{ backgroundColor: idx === currentIndex ? "#1B3942" : "#E16B3B33" }}
+                            aria-label={`Go to product ${idx + 1}`}
+                        />
+                    ))}
+                </div>
             </div>
-        </section>
+
+            <div className="mt-12 grid grid-cols-3 md:grid-cols-6 gap-4">
+                {features.map((product, idx) => (
+                    <button
+                        key={product.id}
+                        onClick={() => goToSlide(idx)}
+                        className={`p-4 rounded-lg transition-all duration-300 flex flex-col items-center ${idx === currentIndex ? 'text-white shadow-lg transform scale-105' : 'bg-white hover:shadow-md'
+                            }`}
+                        style={{
+                            backgroundColor: idx === currentIndex ? "#1B3942" : "white"
+                        }}
+                    >
+                        <div
+                            className={`w-10 h-10 rounded-full flex items-center justify-center mb-2`}
+                            style={{
+                                backgroundColor: idx === currentIndex ? "white" : `${product.color}22`,
+                                color: idx === currentIndex ? product.color : "inherit"
+                            }}
+                        >
+                            {React.createElement(product.icon, {
+                                size: 20,
+                                color: idx === currentIndex ? product.color : product.color
+                            })}
+                        </div>
+                        <span className="text-xs font-semibold text-center">{product.title.split(' – ')[0]}</span>
+                    </button>
+                ))}
+            </div>
+
+            <style jsx>{`
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(10px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn {
+          animation: fadeIn 0.5s ease-out forwards;
+          opacity: 0;
+        }
+      `}</style>
+        </div>
     );
 };
 const ParallaxSection = () => {
