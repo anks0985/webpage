@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Mail, MapPin, Menu, X, Twitter, Facebook, Linkedin, Youtube, ChevronDown } from 'lucide-react';
+import { Mail, MapPin, Menu, X, Twitter, Facebook, Linkedin, Youtube, ChevronDown, Phone } from 'lucide-react';
 const Container = ({ children, className = '' }) => (
     <div className={`container mx-auto px-4 ${className}`}>
         {children}
@@ -67,6 +67,10 @@ const Header = () => {
                                 <a href="mailto:ankit@instructohub.com" className="flex items-center gap-2 text-gray-300 hover:text-brand transition-colors">
                                     <Mail size={16} />
                                     <span>ankit@instructohub.com</span>
+                                </a>
+                                <a href="tel:+919810206863" className="flex items-center gap-2 text-gray-300 hover:text-brand transition-colors">
+                                    <Phone size={16} />
+                                    <span>+919810206863</span>
                                 </a>
                                 <a href="#" className="flex items-center gap-2 text-gray-300 hover:text-brand transition-colors">
                                     <MapPin size={16} />

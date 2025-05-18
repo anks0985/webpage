@@ -112,13 +112,6 @@ const ServicesSection = () => {
                                 <p className="text-2xl text-gray-300 mb-6">
                                     {service.description}
                                 </p>
-                                <a
-                                    href="#"
-                                    className="inline-flex items-center text-white text-lg font-medium group/link"
-                                >
-                                    View More
-                                    <ArrowUpRight className="ml-2 w-5 h-5 text-brand transition-transform duration-300 group-hover/link:translate-x-1" />
-                                </a>
                             </div>
                         </div>
                     ))}
@@ -222,16 +215,12 @@ const ProductsSection = () => {
     ];
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isPaused, setIsPaused] = useState(false);
-    const [isAnimating, setIsAnimating] = useState(false);
     const carouselRef = useRef(null);
     const nextSlide = () => {
-        if (isAnimating) return;
-        setIsAnimating(true);
         setCurrentIndex((prevIndex) => (prevIndex + 1) % features.length);
     };
     useEffect(() => {
         const timer = setTimeout(() => {
-            setIsAnimating(false);
         }, 600);
         return () => clearTimeout(timer);
     }, [currentIndex]);
@@ -245,15 +234,13 @@ const ProductsSection = () => {
         return () => clearInterval(interval);
     }, [isPaused, currentIndex]);
     const goToSlide = (index) => {
-        if (isAnimating) return;
-        setIsAnimating(true);
         setCurrentIndex(index);
     };
     const currentProduct = features[currentIndex];
     const IconComponent = currentProduct.icon;
     return (
         <div id="products" className="container mx-auto py-12 px-4">
-            <div className="mb-12 text-center">
+            <div className="mb-12">
                 <div className="mb-4">
                     <div className="flex items-center mb-4">
                         <div className="w-2 h-2 bg-brand rounded-full mr-3"></div>
@@ -279,9 +266,9 @@ const ProductsSection = () => {
             >
                 <div
                     key={currentProduct.id}
-                    className={`p-8 md:p-12 transition-opacity duration-500 ${isAnimating ? 'opacity-0' : 'opacity-100'}`}
+                    className={`p-8 md:p-12 transition-opacity duration-500`}
                 >
-                    <div className="flex flex-col md:flex-row">
+                    <div className="flex flex-col md:flex-row animate-fadeIn">
                         <div className="md:w-1/4 mb-8 md:mb-0">
                             <div className="flex flex-col items-center md:items-start">
                                 <div
@@ -295,14 +282,14 @@ const ProductsSection = () => {
                         </div>
                         <div className="md:w-3/4 md:pl-12">
                             <div>
-                                <p className="text-xl mb-8 leading-relaxed text-secondary-700">{currentProduct.description}</p>
+                                <p className="text-xl mb-8 h-18 leading-relaxed text-secondary-700">{currentProduct.description}</p>
                                 <div
                                     className={`rounded-lg p-6 border-l-4 ${currentIndex % 2 === 0 ? 'bg-brand-50 border-brand' : 'bg-secondary-50 border-secondary'}`}
                                 >
                                     <h4 className="font-bold text-lg mb-4 text-secondary">KEY FEATURES</h4>
                                     <ul className="space-y-4">
                                         {currentProduct.features.map((feature, idx) => (
-                                            <li key={idx} className="flex items-start animate-fadeIn">
+                                            <li key={idx} className="flex items-start">
                                                 <span
                                                     className={`inline-flex min-w-[1.5rem] w-6 h-6 rounded-full mr-3 flex-shrink-0 items-center justify-center text-white text-sm ${currentIndex % 2 === 0 ? 'bg-brand' : 'bg-secondary'}`}
                                                 >
@@ -339,7 +326,7 @@ const ProductsSection = () => {
                             }`}
                     >
                         <div
-                            className={`w-10 h-10 rounded-full flex items-center justify-center mb-2 ${idx === currentIndex
+                            className={`w-12 h-12 rounded-full flex items-center justify-center mb-2 ${idx === currentIndex
                                 ? 'bg-white'
                                 : (idx % 2 === 0 ? 'bg-brand-200' : 'bg-secondary-200')
                                 }`}
@@ -349,7 +336,7 @@ const ProductsSection = () => {
                                 className: idx % 2 === 0 ? 'text-brand' : 'text-secondary'
                             })}
                         </div>
-                        <span className="text-xs font-semibold text-center">{product.title.split(' - ')[0]}</span>
+                        <span className="text-lg font-semibold text-center">{product.title.split(' - ')[0]}</span>
                     </button>
                 ))}
             </div>
@@ -374,11 +361,6 @@ const ParallaxSection = () => {
                     <p className="text-3xl md:text-4xl leading-relaxed text-white italic">
                         "Our goal is to enhance learning, empower educators, and create long-term value through AI-driven innovation in education space."
                     </p>
-                    <div className="mt-8">
-                        <button className="px-8 py-3 bg-white text-secondary rounded-full hover:bg-brand hover:text-white transition-colors duration-300">
-                            Learn More
-                        </button>
-                    </div>
                 </div>
             </Container>
         </div>
